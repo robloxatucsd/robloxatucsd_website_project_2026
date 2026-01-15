@@ -1,17 +1,14 @@
 import Image from "next/image";
 import Link from 'next/link';
 
+import NavBar from './modules/navbar';
+
 export default function Home() {
   return (
     <div>
       <h1>Home Page</h1>
-      <nav>
-        <Link href="/">Home</Link>
-        <Link href="/team">Team</Link>
-        <Link href="/events">Events</Link>
-        <Link href="/projects">Projects</Link>
-        <Link href="/tutorials">Tutorials</Link>
-      </nav>
+      
+      <NavBar />
     </div>
   );
 }
