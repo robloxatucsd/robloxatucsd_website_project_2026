@@ -4,7 +4,7 @@ import Link from 'next/link';
 export default function Home() {
   return (
     <div>
-      <h1>Home Page</h1>
+      <h1>Team Page</h1>
       <nav>
         <Link href="/">Home</Link>
         <Link href="/team">Team</Link>
