@@ -44,36 +44,42 @@ function TeamSection({ title, members }: TeamSectionProps) {
 }
 
 export default function Home() {
-  // Generate placeholder data
-  const president = Array.from({ length: 1 }, (_, i) => ({
-    name: `President ${i + 1}`,
-    position: 'President'
-  }));
+  // Team member data - replace with actual names and positions
+  const president = [
+    { name: 'mitchellllllll', position: 'President' }
+  ];
 
-  const execs = Array.from({ length: 4 }, (_, i) => ({
-    name: `Executive ${i + 1}`,
-    position: 'Executive Officer'
-  }));
+  const execs = [
+    { name: 'Name Here', position: 'Executive Officer' },
+    { name: 'Name Here', position: 'Executive Officer' },
+    { name: 'Name Here', position: 'Executive Officer' },
+    { name: 'Name Here', position: 'Executive Officer' }
+  ];
 
-  const events = Array.from({ length: 3 }, (_, i) => ({
-    name: `Events Member ${i + 1}`,
-    position: 'Events Officer'
-  }));
+  const events = [
+    { name: 'Name Here', position: 'Events Officer' },
+    { name: 'Name Here', position: 'Events Officer' },
+    { name: 'Name Here', position: 'Events Officer' }
+  ];
 
-  const finance = Array.from({ length: 2 }, (_, i) => ({
-    name: `Finance Member ${i + 1}`,
-    position: 'Finance Officer'
-  }));
+  const finance = [
+    { name: 'Name Here', position: 'Finance Officer' },
+    { name: 'Name Here', position: 'Finance Officer' }
+  ];
 
-  const logistics = Array.from({ length: 3 }, (_, i) => ({
-    name: `Logistics Member ${i + 1}`,
-    position: 'Logistics Officer'
-  }));
+  const logistics = [
+    { name: 'Name Here', position: 'Logistics Officer' },
+    { name: 'Name Here', position: 'Logistics Officer' },
+    { name: 'Name Here', position: 'Logistics Officer' }
+  ];
 
-  const marketing = Array.from({ length: 5 }, (_, i) => ({
-    name: `Marketing Member ${i + 1}`,
-    position: 'Marketing Officer'
-  }));
+  const marketing = [
+    { name: 'Name Here', position: 'Marketing Officer' },
+    { name: 'Name Here', position: 'Marketing Officer' },
+    { name: 'Name Here', position: 'Marketing Officer' },
+    { name: 'Name Here', position: 'Marketing Officer' },
+    { name: 'Name Here', position: 'Marketing Officer' }
+  ];
 
   return (
     <div className="min-h-screen bg-[#1a1a1a] text-white">
