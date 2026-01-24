@@ -45,29 +45,34 @@ function TeamSection({ title, members }: TeamSectionProps) {
 
 export default function Home() {
   // Generate placeholder data
-  const execs = Array.from({ length: 6 }, (_, i) => ({
+  const president = Array.from({ length: 1 }, (_, i) => ({
+    name: `President ${i + 1}`,
+    position: 'President'
+  }));
+
+  const execs = Array.from({ length: 4 }, (_, i) => ({
     name: `Executive ${i + 1}`,
     position: 'Executive Officer'
   }));
 
-  const finance = Array.from({ length: 3 }, (_, i) => ({
+  const events = Array.from({ length: 3 }, (_, i) => ({
+    name: `Events Member ${i + 1}`,
+    position: 'Events Officer'
+  }));
+
+  const finance = Array.from({ length: 2 }, (_, i) => ({
     name: `Finance Member ${i + 1}`,
     position: 'Finance Officer'
   }));
 
-  const marketing = Array.from({ length: 6 }, (_, i) => ({
+  const logistics = Array.from({ length: 3 }, (_, i) => ({
+    name: `Logistics Member ${i + 1}`,
+    position: 'Logistics Officer'
+  }));
+
+  const marketing = Array.from({ length: 5 }, (_, i) => ({
     name: `Marketing Member ${i + 1}`,
     position: 'Marketing Officer'
-  }));
-
-  const team1 = Array.from({ length: 6 }, (_, i) => ({
-    name: `Team Member ${i + 1}`,
-    position: 'Team Officer'
-  }));
-
-  const team2 = Array.from({ length: 6 }, (_, i) => ({
-    name: `Team Member ${i + 1}`,
-    position: 'Team Officer'
   }));
 
   return (
@@ -85,11 +90,12 @@ export default function Home() {
 
         {/* Team Sections */}
         <div>
+          <TeamSection title="President" members={president} />
           <TeamSection title="Execs" members={execs} />
+          <TeamSection title="Events" members={events} />
           <TeamSection title="Finance" members={finance} />
+          <TeamSection title="Logistics" members={logistics} />
           <TeamSection title="Marketing" members={marketing} />
-          <TeamSection title="Team Name" members={team1} />
-          <TeamSection title="Team Name" members={team2} />
         </div>
       </main>
     </div>
