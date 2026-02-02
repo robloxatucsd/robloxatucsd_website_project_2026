@@ -45,9 +45,6 @@ function TeamSection({ title, members }: TeamSectionProps) {
 
 export default function Home() {
   // Team member data - replace with actual names and positions
-  const president = [
-    { name: 'mitchellllllll', position: 'President' }
-  ];
 
   const execs = [
     { name: 'Name Here', position: 'Executive Officer' },
@@ -56,21 +53,16 @@ export default function Home() {
     { name: 'Name Here', position: 'Executive Officer' }
   ];
 
-  const events = [
-    { name: 'Name Here', position: 'Events Officer' },
-    { name: 'Name Here', position: 'Events Officer' },
-    { name: 'Name Here', position: 'Events Officer' }
-  ];
-
-  const finance = [
-    { name: 'Name Here', position: 'Finance Officer' },
-    { name: 'Name Here', position: 'Finance Officer' }
-  ];
-
   const logistics = [
     { name: 'Name Here', position: 'Logistics Officer' },
     { name: 'Name Here', position: 'Logistics Officer' },
     { name: 'Name Here', position: 'Logistics Officer' }
+  ];
+
+  const events = [
+    { name: 'Name Here', position: 'Events Officer' },
+    { name: 'Name Here', position: 'Events Officer' },
+    { name: 'Name Here', position: 'Events Officer' }
   ];
 
   const marketing = [
@@ -79,6 +71,11 @@ export default function Home() {
     { name: 'Name Here', position: 'Marketing Officer' },
     { name: 'Name Here', position: 'Marketing Officer' },
     { name: 'Name Here', position: 'Marketing Officer' }
+  ];
+
+  const finance = [
+    { name: 'Name Here', position: 'Finance Officer' },
+    { name: 'Name Here', position: 'Finance Officer' }
   ];
 
   return (
@@ -96,12 +93,11 @@ export default function Home() {
 
         {/* Team Sections */}
         <div>
-          <TeamSection title="President" members={president} />
           <TeamSection title="Execs" members={execs} />
-          <TeamSection title="Events" members={events} />
-          <TeamSection title="Finance" members={finance} />
           <TeamSection title="Logistics" members={logistics} />
+          <TeamSection title="Events" members={events} />
           <TeamSection title="Marketing" members={marketing} />
+          <TeamSection title="Finance" members={finance} />
         </div>
       </main>
     </div>
