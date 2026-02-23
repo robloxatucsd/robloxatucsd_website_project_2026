@@ -107,11 +107,11 @@ function ProjectRow({ gameList } : ProjectRowProps) {
 
 export default function Home() {
     const gameListTemp = [
-        { id: '15317947079', name: 'Game 1 (Better Discover Placeholder)', icon: '/projectInfo/templateRobloxGameIcon.png'},
-        { id: '189707', name: 'Game 2 (Natural Disaster Placeholder)', icon: '/projectInfo/templateRobloxGameIcon.png'},
-        { id: '189707', name: 'Game 2 (Natural Disaster Placeholder)', icon: '/projectInfo/templateRobloxGameIcon.png'},
-        { id: '189707', name: 'Game 2 (Natural Disaster Placeholder)', icon: '/projectInfo/templateRobloxGameIcon.png'},
-        { id: '189707', name: 'Game 2 (Natural Disaster Placeholder)', icon: '/projectInfo/templateRobloxGameIcon.png'},
+        { id: '118913373294636', name: 'Marble Knockout', icon: '/projectInfo/MarbleKnockout.png'},
+        { id: '84744159610302', name: 'One Block Away', icon: '/projectInfo/OneBlockAway.png'},
+        { id: '121431175394866', name: 'Flash Fog [MVP]', icon: '/projectInfo/FlashFog.png'},
+        { id: '81635200303325', name: '1st The Worst', icon: '/projectInfo/templateRobloxGameIcon.png'},
+        { id: '88441835675894', name: 'Fight bosses or die', icon: '/projectInfo/templateRobloxGameIcon.png'},
         { id: '189707', name: 'Game 2 (Natural Disaster Placeholder)', icon: '/projectInfo/templateRobloxGameIcon.png'},
         { id: '189707', name: 'Game 2 (Natural Disaster Placeholder)', icon: '/projectInfo/templateRobloxGameIcon.png'},
         { id: '189707', name: 'Game 2 (Natural Disaster Placeholder)', icon: '/projectInfo/templateRobloxGameIcon.png'},
