@@ -6,9 +6,9 @@ function NavBar() {
         <nav className="bg-[#1a1a1a] border-b border-gray-800">
             <div className="container mx-auto px-6 py-4 max-w-7xl flex items-center justify-between">
                 {/* Logo Placeholder */}
-                <div className="w-32 h-8 bg-gray-700 rounded flex items-center justify-center">
+                <Link href="/" className="w-32 h-8 bg-gray-700 rounded flex items-center justify-center">
                     <span className="text-white text-sm">LOGO</span>
-                </div>
+                </Link>
                 
                 {/* Navigation Links */}
                 <div className="flex gap-6">
