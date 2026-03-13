@@ -6,8 +6,11 @@ import NavBar from '../modules/navbar';
 export default function Home() {
   return (
     <div>
-      <h1>Tutorials Page</h1>
       <NavBar />
+
+      <main>
+        <h1>Tutorials Page</h1>
+      </main>
     </div>
   );
 }
