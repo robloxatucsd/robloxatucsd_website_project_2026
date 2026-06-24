@@ -59,6 +59,34 @@ export default function Home() {
             </p>
           </div>
         </div>
+
+        {/* Club description text container */}
+        <div className="bg-gradient-to-br from-[#1a1a1a] to-[#252525] rounded-2xl shadow-2xl p-8 md:p-10 border border-gray-800">
+          <div className="flex items-start gap-3 mb-4">
+            <h2 className="text-2xl font-semibold text-white">About Our Club</h2>
+          </div>
+          <p className="text-base md:text-lg text-gray-300 leading-relaxed">
+            We are both a <span className="text-purple-400 font-medium">Social</span> and <span className="text-[#00b2ff] font-medium">Technical</span> Club on Campus looking to foster a community with UCSD Students who are interested in Roblox and Roblox Development.
+          </p>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mt-6">
+            <div className="bg-purple-500/5 p-4 rounded-xl border border-purple-500/10">
+              <h3 className="text-purple-400 font-semibold mb-2">Social Events</h3>
+              <ul className="text-gray-400 text-sm space-y-1">
+                <li>Game Nights</li>
+                <li>Tournaments</li>
+                <li>Spontaneous Hangouts</li>
+              </ul>
+            </div>
+            <div className="bg-[#00b2ff]/5 p-4 rounded-xl border border-[#00b2ff]/10">
+              <h3 className="text-[#00b2ff] font-semibold mb-2">Technical Events</h3>
+              <ul className="text-gray-400 text-sm space-y-1">
+                <li>Workshops</li>
+                <li>Game Jams</li>
+                <li>Roblox Dev Class</li>
+              </ul>
+            </div>
+          </div>
+        </div>
       </main>
     </div>
   );
