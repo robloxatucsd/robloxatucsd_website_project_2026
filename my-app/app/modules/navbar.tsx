@@ -5,9 +5,16 @@ function NavBar() {
     return (
         <nav className="bg-[#1a1a1a] border-b border-gray-800">
             <div className="container mx-auto px-6 py-4 max-w-7xl flex items-center justify-between">
-                {/* Logo Placeholder */}
-                <Link href="/" className="w-32 h-8 bg-gray-700 rounded flex items-center justify-center">
-                    <span className="text-white text-sm">LOGO</span>
+                {/* Logo Image */}
+                <Link href="/" className="flex items-center">
+                    <Image 
+                        src="/generalMedias/Club Logo No Bg.png"
+                        alt="Club Logo" 
+                        width={64}
+                        height={64}
+                        className="object-contain"
+                        priority
+                    />
                 </Link>
                 
                 {/* Navigation Links */}
