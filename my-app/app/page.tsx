@@ -87,6 +87,16 @@ export default function Home() {
             </div>
           </div>
         </div>
+
+        {/* Call to action button */}
+        <button className="mt-10 text-center block mx-auto">
+          <Link 
+            href="/events" 
+            className="inline-block px-8 py-3 bg-[#00b2ff] hover:bg-[#0099dd] text-white font-semibold rounded-full transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-[#00b2ff]/25"
+          >
+            Join Our Next Event →
+          </Link>
+        </button>
       </main>
     </div>
   );
