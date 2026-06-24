@@ -39,6 +39,26 @@ export default function Home() {
             </div>
           </div>
         </div>
+
+        {/* Group photo container */}
+        <div className="relative rounded-2xl overflow-hidden shadow-2xl mb-10 border border-gray-800">
+          <div className="relative w-full" style={{ height: "570px" }}>
+            <Image
+              src="/homeMedias/robloxRBXDevGroup.JPG"
+              alt="Roblox + RBXDev Club Group Photo"
+              fill
+              className="object-cover"
+              priority
+            />
+            <div className="absolute inset-0 bg-gradient-to-t from-[#0a0a0a] via-transparent to-transparent opacity-60"></div>
+          </div>
+          {/* Photo caption */}
+          <div className="absolute bottom-6 left-6 right-6">
+            <p className="text-white/80 text-sm font-light tracking-wide drop-shadow-lg">
+              Our Roblox + RBXDev community at UCSD!
+            </p>
+          </div>
+        </div>
       </main>
     </div>
   );
