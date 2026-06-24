@@ -81,6 +81,39 @@ function ProjectRow({ gameList, title } : ProjectRowProps) {
 }
 
 export default function Home() {
+        const spring26GameJamGames = [
+        { 
+            id: '130864055092281', 
+            name: 'SpyVsSpy', 
+            icon: '/projectMedias/templateRobloxGameIcon.png',
+            team: ['Dibyesh Sahoo', 'Caleb Wheeler', 'Ashley Tan']
+        },
+        { 
+            id: '140353085170254', 
+            name: 'Boat Game', 
+            icon: '/projectMedias/boatGameIcon.webp',
+            team: ['Sally Zorigoo', 'Robyn Todd', 'Bree Tassinari', 'Emily Hoy']
+        },
+        { 
+            id: '117371493816676', 
+            name: 'Escape From Divorce Obby', 
+            icon: '/projectMedias/escapeFromDivorceObbyIcon.webp',
+            team: ['Jay Siqueiroz', 'Marisssa Morales']
+        },
+        { 
+            id: '118796118647532', 
+            name: 'Project Spark', 
+            icon: '/projectMedias/projectSparkIcon.webp',
+            team: ['Trystan Moreno', 'Kim Antoinette Barcelos']
+        },
+        { 
+            id: '108647480705858', 
+            name: 'Project Hail Bloxy', 
+            icon: '/projectMedias/templateRobloxGameIcon.png',
+            team: ['Caio Deshong', 'Quinton', 'Duy Nguyen']
+        }
+    ];
+
     const winter26GameJamGames = [
         { 
             id: '84744159610302', 
@@ -126,6 +159,12 @@ export default function Home() {
                         Explore games created by our members during our game jams
                     </p>
                 </header>
+
+                {/* Spring '26 game jam section */}
+                <ProjectRow 
+                    gameList={spring26GameJamGames} 
+                    title="Spring '26 Game Jam"
+                />
 
                 {/* Winter '26 game jam section */}
                 <ProjectRow 
