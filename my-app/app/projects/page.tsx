@@ -36,7 +36,7 @@ function GameCard({id, name, icon, team }: GameCardProps) {
             {/* Team members */}
             <div className="mt-1">
                 <p className="text-xs text-gray-400 font-medium">Team:</p>
-                <p className="text-xs text-gray-300 line-clamp-2">
+                <p className="text-xs text-gray-300 line-clamp-3">
                     {team.join(', ')}
                 </p>
             </div>
@@ -81,18 +81,36 @@ function ProjectRow({ gameList, title } : ProjectRowProps) {
 }
 
 export default function Home() {
-    const winterGameJamGames = [
+    const winter26GameJamGames = [
         { 
-            id: '15317947079', 
-            name: 'Placeholder 1', 
-            icon: '/projectMedias/templateRobloxGameIcon.png',
-            team: ['John Doe', 'Jane Doe']
+            id: '84744159610302', 
+            name: 'One Block Away', 
+            icon: '/projectMedias/oneBlockAwayIcon.png',
+            team: ['Kim', 'Josh', 'Trystan', 'Evelyn']
         },
         { 
-            id: '189707', 
-            name: 'Placeholder 2', 
+            id: '88441835675894', 
+            name: 'Fight bosses or die', 
             icon: '/projectMedias/templateRobloxGameIcon.png',
-            team: ['John Doe', 'Jane Doe']
+            team: ['Jade Tan', 'Alejandro Vega Camilo', 'Jacob Torres', 'Ryan Lee', 'Ethan Kang', 'Teddy Nguyen']
+        },
+        { 
+            id: '118913373294636', 
+            name: 'Marble Knockout', 
+            icon: '/projectMedias/marbleKnockoutIcon.webp',
+            team: ['Nicholas Constantino', 'Ethan Morales', 'Rafael Coyazo', 'Robyn Todd']
+        },
+        { 
+            id: '121431175394866', 
+            name: 'Flash Fog [MVP]', 
+            icon: '/projectMedias/flashFogIcon.webp',
+            team: ['Dennis Fan', 'Habib Ismail', 'Jaymel Santos']
+        },
+        { 
+            id: '81635200303325', 
+            name: '1st The Worst', 
+            icon: '/projectMedias/templateRobloxGameIcon.png',
+            team: ['Jerimiah', 'Caio', 'Vincent', 'Issac']
         }
     ];
     
@@ -111,7 +129,7 @@ export default function Home() {
 
                 {/* Winter '26 game jam section */}
                 <ProjectRow 
-                    gameList={winterGameJamGames} 
+                    gameList={winter26GameJamGames} 
                     title="Winter '26 Game Jam"
                 />
             </main>
