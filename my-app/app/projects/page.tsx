@@ -48,7 +48,7 @@ function GameCard({id, name, icon, team }: GameCardProps) {
 // game list:
 interface ProjectRowProps {
     gameList: { id: string, name: string; icon: string; team: string[] }[];
-    title: string;
+    title: React.ReactNode;
 }
 function ProjectRow({ gameList, title } : ProjectRowProps) {
   return (
@@ -81,6 +81,21 @@ function ProjectRow({ gameList, title } : ProjectRowProps) {
 }
 
 export default function Home() {
+        const spring26ClassroomGames = [
+            { 
+                id: '75540949400950', 
+                name: 'The Infiltrator', 
+                icon: '/projectMedias/templateRobloxGameIcon.png',
+                team: ['Caio', 'Jimena', 'Jai', 'Trystan']
+            },
+            { 
+                id: '95619237082546', 
+                name: 'Capture the Cheese', 
+                icon: '/projectMedias/captureTheCheeseIcon.webp',
+                team: ['Ryan Lee', 'Kim Antoinette Barcelos', 'Bree Tassinari']
+            }
+        ];
+
         const spring26GameJamGames = [
         { 
             id: '130864055092281', 
@@ -156,20 +171,38 @@ export default function Home() {
                 <header className="mb-12">
                     <h1 className="text-5xl font-bold text-white mb-4">See our projects!</h1>
                     <p className="text-[#A3A3A3] text-lg">
-                        Explore games created by our members during our game jams
+                        Explore games created by our members
                     </p>
                 </header>
+
+                {/* Spring '26 rbx 101 final project section */}
+                <ProjectRow 
+                    gameList={spring26ClassroomGames} 
+                    title={
+                        <>
+                            <span className="text-[#00b2ff]">[ Spring '26 ]</span> RBX 101 Final Projects
+                        </>
+                    }
+                />
 
                 {/* Spring '26 game jam section */}
                 <ProjectRow 
                     gameList={spring26GameJamGames} 
-                    title="Spring '26 Game Jam"
+                    title={
+                        <>
+                            <span className="text-[#00b2ff]">[ Spring '26 ]</span> Game Jam
+                        </>
+                    }
                 />
 
                 {/* Winter '26 game jam section */}
                 <ProjectRow 
                     gameList={winter26GameJamGames} 
-                    title="Winter '26 Game Jam"
+                    title={
+                        <>
+                            <span className="text-[#00b2ff]">[ Winter '26 ]</span> Game Jam
+                        </>
+                    }
                 />
             </main>
         </div>
