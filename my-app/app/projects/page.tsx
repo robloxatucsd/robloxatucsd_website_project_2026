@@ -171,7 +171,7 @@ export default function Home() {
                 <header className="mb-12">
                     <h1 className="text-5xl font-bold text-white mb-4">See our projects!</h1>
                     <p className="text-[#A3A3A3] text-lg">
-                        Explore games created by our members during our game jams
+                        Explore games created by our members
                     </p>
                 </header>
 
