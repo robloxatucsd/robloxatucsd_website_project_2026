@@ -29,39 +29,39 @@ const tutorials: Tutorial[] = [
     },
     {
         id: '2',
-        title: 'placeholder',
-        description: 'placeholder',
-        thumbnail: '/tutorialMedias/1_thumbnail.png',
+        title: 'Intro to Modeling and Plugins',
+        description: 'Learn the basics of modeling, editing terrain, and Roblox Plugins',
+        thumbnail: '/tutorialMedias/2_thumbnail.png',
         category: 'Beginner',
-        googleSlidesUrl: 'https://docs.google.com/presentation/d/e/2PACX-1vSSTnsoXKBHiV_LWwNJJQL6Rn6Euhl3c3HGqRmJDfVNHfFS2njnm8cktbVxoXe1AGY1u8X2hSbeYqCL/pubembed?start=false&loop=false&delayms=3000',
-        content: 'placeholder'
+        googleSlidesUrl: 'https://docs.google.com/presentation/d/e/2PACX-1vRxNZntMaXNb5YNLtAehGRH8EfzLZrhAnzoETSrg1c97hqCrNp2QVUgTYo62nvxOJTnjsjSTu4wAQAo/pubembed?start=false&loop=false&delayms=3000',
+        content: 'This tutorial covers the basics of modeling, using the terrain editor tool, and going over useful Roblox plugins.'
     },
     {
         id: '3',
-        title: 'placeholder',
-        description: 'placeholder',
-        thumbnail: '/tutorialMedias/1_thumbnail.png',
-        category: 'Advanced',
-        googleSlidesUrl: 'https://docs.google.com/presentation/d/e/2PACX-1vSSTnsoXKBHiV_LWwNJJQL6Rn6Euhl3c3HGqRmJDfVNHfFS2njnm8cktbVxoXe1AGY1u8X2hSbeYqCL/pubembed?start=false&loop=false&delayms=3000',
-        content: 'placeholder'
+        title: 'Intro to Scripting [Part 1]',
+        description: 'Learn the basics of scripting in Roblox\'s Luau coding language',
+        thumbnail: '/tutorialMedias/3_thumbnail.png',
+        category: 'Beginner',
+        googleSlidesUrl: 'https://docs.google.com/presentation/d/e/2PACX-1vQW_HxLCCo4uS2XkwDD39MHQiVHj_HodNbWEAw1G-bH4QUKwKBtA3T9KtmXA5yQztYI_ymFKnOOJoJ-/pubembed?start=false&loop=false&delayms=3000',
+        content: 'This tutorial covers the basics of scripting in Roblox\'s Luau coding language such as print statements, comments, variables & data types, lists & tables/dictionaries, operations, conditions, loops, and functions.'
     },
     {
         id: '4',
-        title: 'placeholder',
-        description: 'placeholder',
-        thumbnail: '/tutorialMedias/1_thumbnail.png',
-        category: 'Advanced',
-        googleSlidesUrl: 'https://docs.google.com/presentation/d/e/2PACX-1vSSTnsoXKBHiV_LWwNJJQL6Rn6Euhl3c3HGqRmJDfVNHfFS2njnm8cktbVxoXe1AGY1u8X2hSbeYqCL/pubembed?start=false&loop=false&delayms=3000',
-        content: 'placeholder'
+        title: 'Intro to Scripting [ Part 2 ]',
+        description: 'Continue learning the basics of scripting in Roblox\'s Luau coding language',
+        thumbnail: '/tutorialMedias/4_thumbnail.png',
+        category: 'Beginner',
+        googleSlidesUrl: 'https://docs.google.com/presentation/d/e/2PACX-1vQbssDGpJ3v5Bi9rXfB2OnsqLwlxLCbn35f4wxK8lNzWw3YBNMOCtJafpIarK_8oivDPB7o7pPIWYbA/pubembed?start=false&loop=false&delayms=3000',
+        content: 'This tutorial covers the basics of scripting in Roblox\'s Luau coding language such as loops, functions, variable scope, and recursion. This tutorial also covers game mechanics content that are Roblox-specific scripting like Roblox classes, hierarchy, events, and leaderboards.'
     },
     {
         id: '5',
-        title: 'placeholder',
-        description: 'placeholder',
-        thumbnail: '/tutorialMedias/1_thumbnail.png',
-        category: 'Advanced',
-        googleSlidesUrl: 'https://docs.google.com/presentation/d/e/2PACX-1vSSTnsoXKBHiV_LWwNJJQL6Rn6Euhl3c3HGqRmJDfVNHfFS2njnm8cktbVxoXe1AGY1u8X2hSbeYqCL/pubembed?start=false&loop=false&delayms=3000',
-        content: 'placeholder'
+        title: 'Intro to Graphical User Interface (GUI)',
+        description: 'Learn the basics of graphical user interface (GUI) in Roblox Studio',
+        thumbnail: '/tutorialMedias/5_thumbnail.png',
+        category: 'Beginner',
+        googleSlidesUrl: 'https://docs.google.com/presentation/d/e/2PACX-1vQkWir75-7j0bJCzxHs9aZ09-KzGr7B6dDshexjKIUmMnhbUtKB138rHKExkd6OIM1UfIafhWE8qYAQ/pubembed?start=false&loop=false&delayms=3000',
+        content: 'This tutorial covers the basics of graphical user interface (GUI) in Roblox Studio like frameworks, properties, and incorporating images.'
     }
 ];
 
