@@ -47,7 +47,7 @@ const tutorials: Tutorial[] = [
     },
     {
         id: '4',
-        title: 'Intro to Scripting [ Part 2 ]',
+        title: 'Intro to Scripting [Part 2]',
         description: 'Continue learning the basics of scripting in Roblox\'s Luau coding language',
         thumbnail: '/tutorialMedias/4_thumbnail.png',
         category: 'Beginner',
@@ -62,6 +62,60 @@ const tutorials: Tutorial[] = [
         category: 'Beginner',
         googleSlidesUrl: 'https://docs.google.com/presentation/d/e/2PACX-1vQkWir75-7j0bJCzxHs9aZ09-KzGr7B6dDshexjKIUmMnhbUtKB138rHKExkd6OIM1UfIafhWE8qYAQ/pubembed?start=false&loop=false&delayms=3000',
         content: 'This tutorial covers the basics of graphical user interface (GUI) in Roblox Studio like frameworks, properties, and incorporating images.'
+    },
+    {
+        id: '6',
+        title: 'Review of Basic Scripting Topics',
+        description: 'Master basic scripting topics in Roblox\'s Luau coding language',
+        thumbnail: '/tutorialMedias/6_thumbnail.png',
+        category: 'Advanced',
+        googleSlidesUrl: 'https://docs.google.com/presentation/d/e/2PACX-1vT8Ef9NdYNQ0k2j4OTe3xS6lb8hwI7Bl-TqjgXUk0Jlgc6ttH1fA_m5MsR4GvINtiYj5qMIGiVK2fqy/pubembed?start=false&loop=false&delayms=3000',
+        content: 'Review advanced scripting topics including functions, events, hierarchy (explained more in-depth), and Roblox classes.'
+    },
+    {
+        id: '7',
+        title: 'Advanced Scripting [Part 1]',
+        description: 'Learn advanced scripting topics like CFrames, servers + clients, etc.',
+        thumbnail: '/tutorialMedias/7_thumbnail.png',
+        category: 'Advanced',
+        googleSlidesUrl: 'https://docs.google.com/presentation/d/e/2PACX-1vTeVRUZcGuiMn5sTVGrfEH4yz06kJAp6hn--gyxkHs_SQq2mr5VfhlWKcFd9idD6amFWIrmjtL5Ypog/pubembed?start=false&loop=false&delayms=3000',
+        content: 'This tutorial covers advanced scripting topics including CFrames, servers + clients, and player + PlayerService.'
+    },
+    {
+        id: '8',
+        title: 'Advanced Scripting [Part 2]',
+        description: 'Continue learning advanced scripting topics regarding enum, camera, TweenService, etc.',
+        thumbnail: '/tutorialMedias/8_thumbnail.png',
+        category: 'Advanced',
+        googleSlidesUrl: 'https://docs.google.com/presentation/d/e/2PACX-1vRpedLmNVNWwPt__dqmmj6PQ4gze4_4hRy6ZWRsgRzr1vNBvuyc6hbaPwSmzz6K0g_-HhLND1kTtuvA/pubembed?start=false&loop=false&delayms=3000',
+        content: 'This tutorial covers advanced scripting topics like enum, camera, TweenService, UserInputService, and ContextActionService.'
+    },
+    {
+        id: '9',
+        title: 'Advanced Scripting [Part 3]',
+        description: 'Continue learning advanced scripting topics regarding raycasts, region3, and GeometryService',
+        thumbnail: '/tutorialMedias/9_thumbnail.png',
+        category: 'Advanced',
+        googleSlidesUrl: 'https://docs.google.com/presentation/d/e/2PACX-1vRopjnxJI-my0fTBPsvKlDGTEkHZa-Ox-y4_-5r-DXUBn9bUkECuKOaV-TkT4b--n14mw1rSfh1hSmd/pubembed?start=false&loop=false&delayms=3000',
+        content: 'This tutorial covers advanced scripting topics like raycasts, region3, and GeometryService.'
+    },
+    {
+        id: '10',
+        title: 'Advanced Scripting [Part 4]',
+        description: 'Continue learning advanced scripting topics regarding module scripts and DataStoreService',
+        thumbnail: '/tutorialMedias/10_thumbnail.png',
+        category: 'Advanced',
+        googleSlidesUrl: 'https://docs.google.com/presentation/d/e/2PACX-1vRkdpG1en8WCxdePVJBzbl907huXsXWXZzf0gYhlf0BKwh51dCFJoY1hb2j-y3qgfvxdabrKfOS9NZh/pubembed?start=false&loop=false&delayms=3000',
+        content: 'This tutorial covers advanced scripting topics like module scripts and DataStoreService.'
+    },
+    {
+        id: '11',
+        title: 'Advanced Scripting [Part 5]',
+        description: 'Continue learning advanced scripting topics regarding RunService, Corountines, and task',
+        thumbnail: '/tutorialMedias/11_thumbnail.png',
+        category: 'Advanced',
+        googleSlidesUrl: 'https://docs.google.com/presentation/d/e/2PACX-1vRUeOOWZp6QTcEujVe3sntRsgKHCflqdeNVNz3aScjd7JMjh9DcGzVbcbJFPlx6GrhkVTsVeHBK0yfN/pubembed?start=false&loop=false&delayms=3000',
+        content: 'This tutorial covers advanced scripting topics like RunService, Corountines, and task.'
     }
 ];
 
