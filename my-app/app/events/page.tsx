@@ -17,7 +17,7 @@ export default function EventsPage() {
   ];
 
   return (
-    <div className="min-h-screen bg-[#0a0a0a] text-white">
+    <div className="min-h-screen bg-gradient-to-b from-[#0a0a0a] to-[#1a1a1a] text-white">
       <NavBar />
 
       <main className="container mx-auto px-16 py-12 max-w-[1400px]">
