@@ -111,11 +111,11 @@ const tutorials: Tutorial[] = [
     {
         id: '11',
         title: 'Advanced Scripting [Part 5]',
-        description: 'Continue learning advanced scripting topics regarding RunService, Corountines, and task',
+        description: 'Continue learning advanced scripting topics regarding RunService, Coroutines, and task',
         thumbnail: '/tutorialMedias/11_thumbnail.png',
         category: 'Advanced',
         googleSlidesUrl: 'https://docs.google.com/presentation/d/e/2PACX-1vRUeOOWZp6QTcEujVe3sntRsgKHCflqdeNVNz3aScjd7JMjh9DcGzVbcbJFPlx6GrhkVTsVeHBK0yfN/pubembed?start=false&loop=false&delayms=3000',
-        content: 'This tutorial covers advanced scripting topics like RunService, Corountines, and task.'
+        content: 'This tutorial covers advanced scripting topics like RunService, Coroutines, and task.'
     }
 ];
 
