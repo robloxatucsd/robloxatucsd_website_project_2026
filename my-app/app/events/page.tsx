@@ -1,20 +1,50 @@
 import NavBar from '../modules/navbar';
 import Carousel from '../components/Carousel';
+import { client, urlFor } from '../../sanity/lib/sanity';
 
-export default function EventsPage() {
-  const upcomingEvents = [
-    { image: "/team/irlprofiles/Mitchell-Moundraty.jpg", title: "sorry mitchell for using ur face as a test", subtitle: "sorry mitchell for using ur face as a test" },
-    { image: "/placeholder-event.jpg", title: "Game Night", subtitle: "test subtitle" },
-    { image: "/placeholder-event.jpg", title: "Roblox Workshop", subtitle: "test subtitle" },
-    { image: "/placeholder-event.jpg", title: "smth smth", subtitle: "test subtitle" },
-  ];
+interface Event {
+  _id: string;
+  title: string;
+  subtitle: string;
+  image: any;
+  date: string;
+  category: 'upcoming' | 'recent';
+  location: string;
+}
 
-  const recentEvents = [
-    { image: "/placeholder-event.jpg", title: "past stuff", subtitle: "wowza" },
-    { image: "/placeholder-event.jpg", title: "more past stuff", subtitle: "insanely cool" },
-    { image: "/placeholder-event.jpg", title: "more more past stuff", subtitle: "so so cool" },
-    { image: "/placeholder-event.jpg", title: "more more more past stuff", subtitle: "so so cool" },
-  ];
+async function getEvents() {
+  const query = `*[_type == "event"] | order(date desc) {
+    _id,
+    title,
+    subtitle,
+    image,
+    date,
+    category,
+    location
+  }`;
+  
+  const events = await client.fetch(query);
+  return events;
+}
+
+export default async function EventsPage() {
+  const events: Event[] = await getEvents();
+  
+  const upcomingEvents = events
+    .filter(event => event.category === 'upcoming')
+    .map(event => ({
+      image: urlFor(event.image).url(),
+      title: event.title,
+      subtitle: event.subtitle || event.location || ''
+    }));
+  
+  const recentEvents = events
+    .filter(event => event.category === 'recent')
+    .map(event => ({
+      image: urlFor(event.image).url(),
+      title: event.title,
+      subtitle: event.subtitle || event.location || ''
+    }));
 
   return (
     <div className="min-h-screen bg-gradient-to-b from-[#0a0a0a] to-[#1a1a1a] text-white">
