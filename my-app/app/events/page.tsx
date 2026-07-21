@@ -1,4 +1,5 @@
 import NavBar from '../modules/navbar';
+import Footer from '../components/Footer';
 import Carousel from '../components/Carousel';
 import { client, urlFor } from '../../sanity/lib/sanity';
 
@@ -118,6 +119,8 @@ export default async function EventsPage() {
           <Carousel items={recentEvents} />
         </section>
       </main>
+
+      <Footer />
     </div>
   );
 }

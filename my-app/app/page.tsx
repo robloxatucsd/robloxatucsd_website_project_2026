@@ -2,6 +2,7 @@ import Image from "next/image";
 import Link from 'next/link';
 
 import NavBar from './modules/navbar';
+import Footer from './components/Footer';
 
 export default function Home() {
   return (
@@ -98,6 +99,8 @@ export default function Home() {
           </Link>
         </button>
       </main>
+
+      <Footer />
     </div>
   );
 }

@@ -4,6 +4,7 @@ import { useState, useRef } from "react";
 import Image from "next/image";
 import Link from 'next/link';
 import NavBar from '../modules/navbar';
+import Footer from '../components/Footer';
 
 // tutorial data structure
 interface Tutorial {
@@ -345,6 +346,8 @@ export default function Home() {
                     />
                 </div>
             </main>
+
+            <Footer />
         </div>
     );
 }

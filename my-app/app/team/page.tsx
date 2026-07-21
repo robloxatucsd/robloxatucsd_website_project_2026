@@ -2,6 +2,7 @@
 
 import Image from "next/image";
 import NavBar from '../modules/navbar';
+import Footer from '../components/Footer';
 import FlipCard from '../components/FlipCard';
 import { useState, useEffect } from 'react';
 interface TeamMember {
@@ -254,6 +255,8 @@ export default function Home() {
           <TeamSection title="Finance" members={finance} sectionOffset={execs.length + events.length + marketing.length} randomlyFlippedCards={randomlyFlippedCards} />
         </div>
       </main>
+
+      <Footer />
     </div>
   );
 }
