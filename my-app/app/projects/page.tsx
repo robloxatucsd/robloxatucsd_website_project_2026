@@ -2,6 +2,7 @@ import Image from "next/image";
 import Link from 'next/link';
 
 import NavBar from '../modules/navbar';
+import Footer from '../components/Footer';
 
 // game card:
 interface GameCardProps {
@@ -205,6 +206,8 @@ export default function Home() {
                     }
                 />
             </main>
+
+            <Footer />
         </div>
     );
 }
