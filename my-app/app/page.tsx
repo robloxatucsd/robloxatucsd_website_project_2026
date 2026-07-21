@@ -6,6 +6,7 @@ import Link from 'next/link';
 import NavBar from './modules/navbar';
 import Footer from './components/Footer';
 import Counter from './components/Counter';
+import GroupPhotoWithVideo from './components/GroupPhotoWithVideo';
 
 export default function Home() {
   return (
@@ -192,66 +193,39 @@ export default function Home() {
           {/* Group Images */}
           <div className="flex flex-col gap-6 mb-8">
             {/* Top Image */}
-            <div className="relative w-full h-56 md:h-72 rounded-xl overflow-hidden border-2 border-orange-400/30">
-              <Image
-                src="/homeMedias/groupPhoto1.png"
-                alt="Group photo 1"
-                fill
-                className="object-cover"
-                style={{ 
-                  objectPosition: "50% 60%",
-                  transform: "scale(1.0)",
-                  transformOrigin: "center center"
-                }}
-              />
-              {/* Caption Overlay */}
-              <div className="absolute bottom-0 left-0 right-0 p-4 bg-gradient-to-t from-black/95 via-black/60 to-transparent">
-                <p className="text-white text-sm font-bold tracking-wide drop-shadow-lg text-left [text-shadow:_0_2px_4px_rgba(0,0,0,0.8)]">
-                  2025-2026 Roblox + RBXDev Officers in Natural Disaster Survival
-                </p>
-              </div>
-            </div>
+            <GroupPhotoWithVideo
+              src="/homeMedias/groupPhoto1.png"
+              videoSrc="/homeMedias/video1.mp4"
+              alt="Group photo 1"
+              caption="2025-2026 Roblox + RBXDev Officers in Natural Disaster Survival"
+              hoverCaption="Spontaneous Game Night"
+              objectPosition="50% 60%"
+              scale={1.0}
+              height="h-56 md:h-72"
+            />
             
             {/* Bottom Two Images */}
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-              <div className="relative w-full h-48 md:h-56 rounded-xl overflow-hidden border-2 border-orange-400/30">
-                <Image
-                  src="/homeMedias/groupPhoto2.png"
-                  alt="Group photo 2"
-                  fill
-                  className="object-cover"
-                  style={{ 
-                    objectPosition: "50% 40%",
-                    transform: "scale(1.1)",
-                    transformOrigin: "center center"
-                  }}
-                />
-                {/* Caption Overlay */}
-                <div className="absolute bottom-0 left-0 right-0 p-4 bg-gradient-to-t from-black/95 via-black/60 to-transparent">
-                  <p className="text-white text-sm font-bold tracking-wide drop-shadow-lg text-left [text-shadow:_0_2px_4px_rgba(0,0,0,0.8)]">
-                    Dress to Impress Tournament! Theme: UCSD Colleges
-                  </p>
-                </div>
-              </div>
-              <div className="relative w-full h-48 md:h-56 rounded-xl overflow-hidden border-2 border-orange-400/30">
-                <Image
-                  src="/homeMedias/groupPhoto3.png"
-                  alt="Group photo 3"
-                  fill
-                  className="object-cover"
-                  style={{ 
-                    objectPosition: "50% 90%",
-                    transform: "scale(2.8)",
-                    transformOrigin: "center center"
-                  }}
-                />
-                {/* Caption Overlay */}
-                <div className="absolute bottom-0 left-0 right-0 p-4 bg-gradient-to-t from-black/95 via-black/60 to-transparent">
-                  <p className="text-white text-sm font-bold tracking-wide drop-shadow-lg text-left [text-shadow:_0_2px_4px_rgba(0,0,0,0.8)]">
-                    Winter'26 GBM Squid Game Competition
-                  </p>
-                </div>
-              </div>
+              <GroupPhotoWithVideo
+                src="/homeMedias/groupPhoto2.png"
+                videoSrc="/homeMedias/video2.mp4"
+                alt="Group photo 2"
+                caption="Dress to Impress Tournament! Theme: UCSD Colleges"
+                hoverCaption="Spontaneous Game Night"
+                objectPosition="50% 40%"
+                scale={1.1}
+                height="h-48 md:h-56"
+              />
+              <GroupPhotoWithVideo
+                src="/homeMedias/groupPhoto3.png"
+                videoSrc="/homeMedias/video3.mp4"
+                alt="Group photo 3"
+                caption="Winter'26 GBM Squid Game Competition"
+                hoverCaption="Spontaneous Game Night"
+                objectPosition="50% 90%"
+                scale={2.8}
+                height="h-48 md:h-56"
+              />
             </div>
           </div>
           
