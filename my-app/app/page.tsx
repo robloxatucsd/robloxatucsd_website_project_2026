@@ -2,10 +2,10 @@
 
 import Image from "next/image";
 import Link from 'next/link';
-import { useEffect, useState, useRef } from 'react';
 
 import NavBar from './modules/navbar';
 import Footer from './components/Footer';
+import Counter from './components/Counter';
 
 export default function Home() {
   return (
@@ -60,16 +60,20 @@ export default function Home() {
         {/* Stats/Highlights Section */}
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8 mb-24">
           <div className="bg-gradient-to-br from-[#1a1a1a] to-[#252525] rounded-2xl p-10 border border-gray-800 text-center hover:border-[#00b2ff]/30 transition-all duration-300">
-            <div className="text-gray-400 text-base">400+ Robloxian Members</div>
+            <Counter end={400} suffix="+" duration={2500} />
+            <div className="text-gray-400 text-base">Robloxian Members</div>
           </div>
           <div className="bg-gradient-to-br from-[#1a1a1a] to-[#252525] rounded-2xl p-10 border border-gray-800 text-center hover:border-[#00b2ff]/30 transition-all duration-300">
-            <div className="text-gray-400 text-base">25+ Events Hosted</div>
+            <Counter end={25} suffix="+" duration={2500} />
+            <div className="text-gray-400 text-base">Events Hosted</div>
           </div>
           <div className="bg-gradient-to-br from-[#1a1a1a] to-[#252525] rounded-2xl p-10 border border-gray-800 text-center hover:border-[#00b2ff]/30 transition-all duration-300">
-            <div className="text-gray-400 text-base">10+ Games Created</div>
+            <Counter end={10} suffix="+" duration={2500} />
+            <div className="text-gray-400 text-base">Games Created</div>
           </div>
           <div className="bg-gradient-to-br from-[#1a1a1a] to-[#252525] rounded-2xl p-10 border border-gray-800 text-center hover:border-[#00b2ff]/30 transition-all duration-300">
-            <div className="text-gray-400 text-base">30000+ Robux Given Out</div>
+            <Counter end={30000} suffix="+" duration={2500} />
+            <div className="text-gray-400 text-base">Robux Given Out</div>
           </div>
         </div>
 
