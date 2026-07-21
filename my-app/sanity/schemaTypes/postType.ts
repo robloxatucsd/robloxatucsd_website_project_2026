@@ -48,6 +48,17 @@ export const postType = defineType({
       name: 'body',
       type: 'blockContent',
     }),
+    defineField({
+      name: 'instagramLink',
+      title: 'Instagram Post Link',
+      type: 'url',
+      description: 'Link to the Instagram post with event information',
+      validation: (Rule) =>
+        Rule.uri({
+          scheme: ['http', 'https'],
+          allowRelative: false,
+        }).warning('Please enter a valid URL'),
+    }),
   ],
   preview: {
     select: {

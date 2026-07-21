@@ -6,44 +6,67 @@ interface Event {
   _id: string;
   title: string;
   subtitle: string;
-  image: any;
+  mainImage: any;
   date: string;
-  category: 'upcoming' | 'recent';
-  location: string;
+  categories: any[];
+  instagramLink?: string;
 }
 
 async function getEvents() {
-  const query = `*[_type == "event"] | order(date desc) {
+  const query = `*[_type == "post"] | order(date desc) {
     _id,
     title,
-    subtitle,
-    image,
+    "subtitle": body[0].children[0].text,
+    mainImage,
     date,
-    category,
-    location
+    categories[]->{title, slug},
+    instagramLink
   }`;
   
   const events = await client.fetch(query);
   return events;
 }
 
+// Clean text helper to remove extra whitespace and special characters
+function cleanText(text: string): string {
+  if (!text) return '';
+  // Replace newlines and multiple spaces with a single space
+  let cleaned = text.replace(/\s+/g, ' ').trim();
+  // Remove any problematic Unicode characters
+  cleaned = cleaned.normalize('NFKC');
+  return cleaned;
+}
+
+// Truncate text helper
+function truncateText(text: string, maxLength: number = 80): string {
+  const cleaned = cleanText(text);
+  if (cleaned.length <= maxLength) return cleaned;
+  return cleaned.slice(0, maxLength) + '...';
+}
+
 export default async function EventsPage() {
   const events: Event[] = await getEvents();
   
+  const hasCategory = (event: Event, categoryName: string) => {
+    return event.categories?.some(cat => cat.title === categoryName);
+  };
+  
   const upcomingEvents = events
-    .filter(event => event.category === 'upcoming')
+    .filter(event => hasCategory(event, 'Upcoming'))
     .map(event => ({
-      image: urlFor(event.image).url(),
-      title: event.title,
-      subtitle: event.subtitle || event.location || ''
+      image: event.mainImage ? urlFor(event.mainImage).url() : '/placeholder-event.jpg',
+      title: cleanText(event.title || ''),
+      subtitle: truncateText(event.subtitle || '', 80),
+      instagramLink: event.instagramLink || null
     }));
   
   const recentEvents = events
-    .filter(event => event.category === 'recent')
+    .filter(event => hasCategory(event, 'Recent'))
     .map(event => ({
-      image: urlFor(event.image).url(),
-      title: event.title,
-      subtitle: event.subtitle || event.location || ''
+      image: event.mainImage ? urlFor(event.mainImage).url() : '/placeholder-event.jpg',
+      title: cleanText(event.title || ''),
+      subtitle: truncateText(event.subtitle || '', 80),
+      instagramLink: event.instagramLink || null
     }));
 
   return (
