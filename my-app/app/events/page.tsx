@@ -7,18 +7,19 @@ interface Event {
   title: string;
   subtitle: string;
   mainImage: any;
-  date: string;
+  publishedAt: string;
   categories: any[];
   instagramLink?: string;
 }
 
 async function getEvents() {
-  const query = `*[_type == "post"] | order(date desc) {
+  // Order by publishedAt descending (newest first)
+  const query = `*[_type == "post"] | order(publishedAt desc) {
     _id,
     title,
     "subtitle": body[0].children[0].text,
     mainImage,
-    date,
+    publishedAt,
     categories[]->{title, slug},
     instagramLink
   }`;
@@ -44,6 +45,17 @@ function truncateText(text: string, maxLength: number = 80): string {
   return cleaned.slice(0, maxLength) + '...';
 }
 
+// Format date helper
+function formatDate(dateString: string): string {
+  if (!dateString) return '';
+  const date = new Date(dateString);
+  return date.toLocaleDateString('en-US', {
+    year: 'numeric',
+    month: 'short',
+    day: 'numeric',
+  });
+}
+
 export default async function EventsPage() {
   const events: Event[] = await getEvents();
   
@@ -57,8 +69,15 @@ export default async function EventsPage() {
       image: event.mainImage ? urlFor(event.mainImage).url() : '/placeholder-event.jpg',
       title: cleanText(event.title || ''),
       subtitle: truncateText(event.subtitle || '', 80),
-      instagramLink: event.instagramLink || null
-    }));
+      instagramLink: event.instagramLink || null,
+      publishedAt: event.publishedAt // Keep for sorting
+    }))
+    .sort((a, b) => {
+      // Sort by publishedAt descending (newest first)
+      if (!a.publishedAt) return 1;
+      if (!b.publishedAt) return -1;
+      return new Date(b.publishedAt).getTime() - new Date(a.publishedAt).getTime();
+    });
   
   const recentEvents = events
     .filter(event => hasCategory(event, 'Recent'))
@@ -66,8 +85,15 @@ export default async function EventsPage() {
       image: event.mainImage ? urlFor(event.mainImage).url() : '/placeholder-event.jpg',
       title: cleanText(event.title || ''),
       subtitle: truncateText(event.subtitle || '', 80),
-      instagramLink: event.instagramLink || null
-    }));
+      instagramLink: event.instagramLink || null,
+      publishedAt: event.publishedAt 
+    }))
+    .sort((a, b) => {
+      // Sort by publishedAt descending (newest first)
+      if (!a.publishedAt) return 1;
+      if (!b.publishedAt) return -1;
+      return new Date(b.publishedAt).getTime() - new Date(a.publishedAt).getTime();
+    });
 
   return (
     <div className="min-h-screen bg-gradient-to-b from-[#0a0a0a] to-[#1a1a1a] text-white">
