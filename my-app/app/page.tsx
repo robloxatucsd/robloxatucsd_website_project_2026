@@ -108,7 +108,7 @@ export default function Home() {
           </div>
         </div>
 
-        {/* Game Showcase Section */}
+        {/* Game Showcase Section - Updated with highlight hover effect */}
         <div className="mb-24">
           <div className="flex items-center gap-4 mb-6">
             <h2 className="text-3xl font-bold text-white">Student Games</h2>
@@ -136,24 +136,26 @@ export default function Home() {
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
             {/* Game 1 */}
             <Link 
-              href="https://www.roblox.com/games/95619237082546/Capture-the-Cheese"
+              href="https://www.roblox.com/games/116487592197166/King-of-The-Slaps"
               target="_blank"
               rel="noopener noreferrer"
               className="group block"
             >
-              <div className="bg-gradient-to-br from-[#1a1a1a] to-[#252525] rounded-2xl overflow-hidden border border-gray-800 hover:border-[#00b2ff]/30 transition-all duration-300 h-full">
-                <div className="relative w-full h-64 bg-gray-700 overflow-hidden">
+              <div className="bg-gradient-to-br from-[#1a1a1a] to-[#252525] rounded-2xl overflow-hidden border border-gray-800 transition-all duration-300 h-full">
+                <div className="relative w-full h-64 bg-gray-700 overflow-hidden transition-all duration-300 group-hover:ring-2 group-hover:ring-[#00b2ff] group-hover:ring-offset-2 group-hover:ring-offset-[#1a1a1a]">
                   <Image
-                    src="/homeMedias/captureTheCheeseScreenshot.png"
-                    alt="Capture the Cheese"
+                    src="/homeMedias/kingOfTheSlapsThumbnail.png"
+                    alt="King of The Slaps"
                     fill
-                    className="object-cover transition-transform duration-300 group-hover:scale-105"
+                    className="object-cover"
                   />
+                  {/* Highlight overlay */}
+                  <div className="absolute inset-0 bg-[#00b2ff] opacity-0 group-hover:opacity-10 transition-opacity duration-300"></div>
                 </div>
                 <div className="p-6">
-                  <h3 className="text-xl font-bold text-white mb-2 group-hover:text-[#00b2ff] transition-colors">Capture the Cheese</h3>
-                  <p className="text-gray-400 text-sm">A fast-paced capture the flag style game with a cheesy twist!</p>
-                  <span className="inline-block mt-4 text-[#00b2ff] group-hover:text-[#0099dd] transition-colors font-medium">
+                  <h3 className="text-xl font-bold text-white mb-2 transition-colors duration-300 group-hover:text-[#00b2ff]">King of The Slaps</h3>
+                  <p className="text-gray-400 text-sm">Can you slap your opponents out before they slap you?</p>
+                  <span className="inline-block mt-4 text-[#00b2ff] group-hover:text-[#0099dd] transition-colors duration-300 font-medium">
                     Play Now →
                   </span>
                 </div>
@@ -162,24 +164,26 @@ export default function Home() {
 
             {/* Game 2 */}
             <Link 
-              href="https://www.roblox.com/games/121431175394866/Flash-Fog"
+              href="https://www.roblox.com/games/95619237082546/Capture-the-Cheese"
               target="_blank"
               rel="noopener noreferrer"
               className="group block"
             >
-              <div className="bg-gradient-to-br from-[#1a1a1a] to-[#252525] rounded-2xl overflow-hidden border border-gray-800 hover:border-[#00b2ff]/30 transition-all duration-300 h-full">
-                <div className="relative w-full h-64 bg-gray-700 overflow-hidden">
+              <div className="bg-gradient-to-br from-[#1a1a1a] to-[#252525] rounded-2xl overflow-hidden border border-gray-800 transition-all duration-300 h-full">
+                <div className="relative w-full h-64 bg-gray-700 overflow-hidden transition-all duration-300 group-hover:ring-2 group-hover:ring-[#00b2ff] group-hover:ring-offset-2 group-hover:ring-offset-[#1a1a1a]">
                   <Image
-                    src="/homeMedias/flashFogScreenshot.png"
-                    alt="Flash Fog"
+                    src="/homeMedias/captureTheCheeseThumbnail.png"
+                    alt="Capture the Cheese"
                     fill
-                    className="object-cover transition-transform duration-300 group-hover:scale-105"
+                    className="object-cover"
                   />
+                  {/* Highlight overlay */}
+                  <div className="absolute inset-0 bg-[#00b2ff] opacity-0 group-hover:opacity-10 transition-opacity duration-300"></div>
                 </div>
                 <div className="p-6">
-                  <h3 className="text-xl font-bold text-white mb-2 group-hover:text-[#00b2ff] transition-colors">Flash Fog [MVP]</h3>
-                  <p className="text-gray-400 text-sm">Aim in the dark. Fire in the flash.</p>
-                  <span className="inline-block mt-4 text-[#00b2ff] group-hover:text-[#0099dd] transition-colors font-medium">
+                  <h3 className="text-xl font-bold text-white mb-2 transition-colors duration-300 group-hover:text-[#00b2ff]">Capture the Cheese</h3>
+                  <p className="text-gray-400 text-sm">A fast-paced capture the flag style game with a cheesy twist!</p>
+                  <span className="inline-block mt-4 text-[#00b2ff] group-hover:text-[#0099dd] transition-colors duration-300 font-medium">
                     Play Now →
                   </span>
                 </div>
@@ -230,11 +234,11 @@ export default function Home() {
           </div>
           
           <h2 className="text-2xl md:text-3xl font-bold text-white mb-3">
-            Ready to play, learn, and create?
+            Come join us!
           </h2>
           <p className="text-gray-400 max-w-2xl mx-auto mb-6">
             Join our community of fellow robloxians and developers at UCSD. 
-            Whether you're here to make friends or make games, we've got a place for you!
+            Whether you're here to build connections or build games, you are always welcome.
           </p>
           
           <Link 
