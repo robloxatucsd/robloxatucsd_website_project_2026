@@ -47,12 +47,6 @@ const Carousel: React.FC<CarouselProps> = ({ items, emptyMessage }) => {
     }
   };
 
-  const handleCardClick = (instagramLink?: string | null) => {
-    if (instagramLink) {
-      window.open(instagramLink, '_blank', 'noopener,noreferrer');
-    }
-  };
-
   // Clean text
   const cleanText = (text: string) => {
     if (!text) return '';
@@ -139,17 +133,9 @@ const Carousel: React.FC<CarouselProps> = ({ items, emptyMessage }) => {
         {items.map((event, index) => {
           const isHovered = hoveredIndex === index;
           
-          return (
-            <div
-              key={index}
-              onClick={() => handleCardClick(event.instagramLink)}
-              onMouseEnter={() => setHoveredIndex(index)}
-              onMouseLeave={() => setHoveredIndex(null)}
-              className="min-w-[280px] max-w-[280px] snap-start flex flex-col bg-gray-800 rounded-xl overflow-hidden border border-gray-700 transition-all duration-300 shadow-lg cursor-pointer"
-              style={{
-                borderColor: isHovered ? '#00b2ff' : 'rgb(55, 65, 81)',
-              }}
-            >
+          // If there's an Instagram link, wrap the card in an <a> tag
+          const cardContent = (
+            <>
               {/* Image Container */}
               <div className="relative w-full h-40 bg-gray-700 overflow-hidden">
                 <img
@@ -175,20 +161,49 @@ const Carousel: React.FC<CarouselProps> = ({ items, emptyMessage }) => {
                 
                 {/* Instagram Link */}
                 {event.instagramLink && (
-                  <a
-                    href={event.instagramLink}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    onClick={(e) => e.stopPropagation()}
-                    className="inline-flex items-center mt-3 text-[#00b2ff] hover:text-[#0099dd] transition-colors text-sm font-medium w-fit"
-                  >
+                  <span className="inline-flex items-center mt-3 text-[#00b2ff] text-sm font-medium w-fit">
                     View Event Details
                     <svg className="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
                     </svg>
-                  </a>
+                  </span>
                 )}
               </div>
+            </>
+          );
+
+          // if there's an instagram link, wrap the entire card in an <a> tag
+          if (event.instagramLink) {
+            return (
+              <a
+                key={index}
+                href={event.instagramLink}
+                target="_blank"
+                rel="noopener noreferrer"
+                onMouseEnter={() => setHoveredIndex(index)}
+                onMouseLeave={() => setHoveredIndex(null)}
+                className="min-w-[280px] max-w-[280px] snap-start flex flex-col bg-gray-800 rounded-xl overflow-hidden border border-gray-700 transition-all duration-300 shadow-lg cursor-pointer no-underline"
+                style={{
+                  borderColor: isHovered ? '#00b2ff' : 'rgb(55, 65, 81)',
+                }}
+              >
+                {cardContent}
+              </a>
+            );
+          }
+
+          // if no instagram link, render as a non-clickable div
+          return (
+            <div
+              key={index}
+              onMouseEnter={() => setHoveredIndex(index)}
+              onMouseLeave={() => setHoveredIndex(null)}
+              className="min-w-[280px] max-w-[280px] snap-start flex flex-col bg-gray-800 rounded-xl overflow-hidden border border-gray-700 transition-all duration-300 shadow-lg"
+              style={{
+                borderColor: isHovered ? '#00b2ff' : 'rgb(55, 65, 81)',
+              }}
+            >
+              {cardContent}
             </div>
           );
         })}
