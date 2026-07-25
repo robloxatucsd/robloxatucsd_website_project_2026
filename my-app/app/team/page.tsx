@@ -1,10 +1,12 @@
 "use client";
 
 import Image from "next/image";
+import Link from 'next/link';
 import NavBar from '../modules/navbar';
 import Footer from '../components/Footer';
 import FlipCard from '../components/FlipCard';
 import { useState, useEffect } from 'react';
+
 interface TeamMember {
   name: string;
   position: string;
@@ -67,123 +69,193 @@ export default function Home() {
       position: 'President',
       irlImage: 'Mitchell-Moundraty.jpg',
       robloxImage: 'rbxpfp-Mitchell Moundraty.webp',
-      zoom: 1.5, // zoom in
+      zoom: 1.5,
       objectPosition: 'bottom'
     },
     { 
-      name: 'Bree Tassinari', 
-      position: 'VP Finance', 
-      irlImage: 'Bree-Tassinari.jpg',
-      robloxImage: 'rbxpfp-Bree Tassinari.png'
+      name: 'Shawn Cheng', 
+      position: 'Dev VP', 
+      irlImage: 'Shawn-Cheng.jpg',
+      robloxImage: 'rbxpfp-Shawn Cheng.png'
+    },
+    { 
+      name: 'Jimmy Che', 
+      position: 'Events VP', 
+      irlImage: 'Jimmy-Che.JPG',
+      robloxImage: 'rbxpfp-Jimmy Che.jpg'
     },
     { 
       name: 'Sally Zorigoo', 
-      position: 'Co-VP Marketing', 
+      position: 'Marketing Co-VP', 
       irlImage: 'S-Z.webp',
       robloxImage: 'rbxpfp-S Z.webp'
     },
     { 
       name: 'Yaena Chun', 
-      position: 'Co-VP Marketing', 
+      position: 'Marketing Co-VP', 
       irlImage: 'Yaena-Chun.jpeg',
       robloxImage: 'rbxpfp-Yaena Chun.jpeg'
     },
     { 
-      name: 'Shawn Cheng', 
-      position: 'VP Events', 
-      irlImage: 'Shawn-Cheng.jpg',
-      robloxImage: 'rbxpfp-Shawn Cheng.png'
-    },
-  ];
-
-  const events: TeamMember[] = [
-    { 
-      name: 'Manuel Cerda', 
-      position: 'Events Officer', 
-      irlImage: 'Manuel-Cerda.png',
-      robloxImage: 'rbxpfp-Manuel Cerda.webp'
+      name: 'Bree Tassinari', 
+      position: 'Finance VP', 
+      irlImage: 'Bree-Tassinari.jpg',
+      robloxImage: 'rbxpfp-Bree Tassinari.png'
     },
     { 
-      name: 'Jimmy Che', 
-      position: 'Events Officer', 
-      irlImage: 'Jimmy-Che.JPG',
-      robloxImage: 'rbxpfp-Jimmy Che.jpg'
+      name: 'Robyn Todd', 
+      position: 'Art VP', 
+      irlImage: 'Robyn-Todd.jpg',
+      robloxImage: 'rbxpfp-Robyn Todd.png'
+    },
+    { 
+      name: 'Emily Hoy', 
+      position: 'Outreach VP', 
+      irlImage: 'rbxpfp-Default.png',
+      robloxImage: 'rbxpfp-Default.png'
     },
     {
       name: 'David Gao',
-      position: 'Events Officer',
+      position: 'Secretary',
       irlImage: 'David-Gao.png',
       robloxImage: 'rbxpfp-David Gao.png',
-      objectPosition: 'top', // move img up to show face
+      objectPosition: 'top',
       zoom: 1.5
     },
   ];
 
+  const dev: TeamMember[] = [
+    { 
+      name: 'Ryan Lee', 
+      position: 'Game Jam Lead', 
+      irlImage: 'rbxpfp-Default.png',
+      robloxImage: 'rbxpfp-Default.png'
+    },
+    { 
+      name: 'Kim Antoinette Barcelos', 
+      position: 'UGC Lead', 
+      irlImage: 'rbxpfp-Default.png',
+      robloxImage: 'rbxpfp-Default.png'
+    },
+    {
+      name: 'Caio Deshong',
+      position: 'Writing Lead',
+      irlImage: 'rbxpfp-Default.png',
+      robloxImage: 'rbxpfp-Default.png'
+    },
+    {
+      name: 'Nicole Fong',
+      position: 'Website Manager',
+      irlImage: 'Nicole-Fong.png',
+      robloxImage: 'rbxpfp-Nicole Fong.jpeg',
+      zoom: 1.4,
+      objectPosition: 'top'
+    },
+  ];
+
+  const events: TeamMember[] = [
+    {
+      name: 'Natalie Tran',
+      position: 'Historian',
+      irlImage: 'Natalie-Tran.jpeg',
+      robloxImage: 'rbxpfp-Natalie Tran.jpeg',
+      zoom: 1.5
+    },
+    {
+      name: 'Sam Villarruel',
+      position: 'Events Staff',
+      irlImage: 'rbxpfp-Default.png',
+      robloxImage: 'rbxpfp-Default.png'
+    },
+    {
+      name: 'Leyla Yunusova',
+      position: 'Events Staff',
+      irlImage: 'Leyla-Yunusova.jpg',
+      robloxImage: 'rbxpfp-Leyla Yunusova.webp'
+    },
+    {
+      name: 'Jimena Lopez',
+      position: 'Events Staff',
+      irlImage: 'Jimena-Lopez.jpeg',
+      robloxImage: 'rbxpfp-Jimena Lopez.jpeg'
+    },
+    {
+      name: 'Nghi Nguyen',
+      position: 'Events Staff',
+      irlImage: 'rbxpfp-Default.png',
+      robloxImage: 'rbxpfp-Default.png'
+    },
+  ];
+
   const marketing: TeamMember[] = [
+    { 
+      name: 'Manuel Cerda', 
+      position: 'Social Media', 
+      irlImage: 'Manuel-Cerda.png',
+      robloxImage: 'rbxpfp-Manuel Cerda.webp'
+    },
     { 
       name: 'Wanyi Wu', 
       position: 'Social Media', 
       irlImage: 'Wanyi-Wu.jpg',
       robloxImage: 'rbxpfp-Wanyi Wu.png'
     },
+  ];
+
+  const art: TeamMember[] = [
     { 
-      name: 'Jay Siqueiroz', 
-      position: 'Social Media', 
-      irlImage: 'Jay-Siqueiroz.jpg',
-      robloxImage: 'rbxpfp-Jay Siqueiroz.png'
+      name: 'Ric Penales', 
+      position: 'Art Staff', 
+      irlImage: 'rbxpfp-Default.png',
+      robloxImage: 'rbxpfp-Default.png'
     },
     { 
-      name: 'Joie Fong', 
-      position: 'Outreach & Collabs', 
-      irlImage: 'Joie-Fong.jpeg',
-      robloxImage: 'rbxpfp-Joie Fong.png'
+      name: 'Catherine Xu', 
+      position: 'Art Staff', 
+      irlImage: 'rbxpfp-Default.png',
+      robloxImage: 'rbxpfp-Default.png'
     },
     { 
-      name: 'Samantha St Clair', 
-      position: 'Outreach & Collabs', 
-      irlImage: 'Samantha-St-Clair.JPG',
-      robloxImage: 'rbxpfp-Samantha St Clair.webp'
+      name: 'Kelsey Pi', 
+      position: 'Art Staff', 
+      irlImage: 'rbxpfp-Default.png',
+      robloxImage: 'rbxpfp-Default.png'
     },
     { 
-      name: 'Robyn Todd', 
-      position: 'Art Lead', 
-      irlImage: 'Robyn-Todd.jpg',
-      robloxImage: 'rbxpfp-Robyn Todd.png'
-    },
-    { 
-      name: 'Julie Nguyen', 
-      position: 'Project Manager', 
-      irlImage: 'Julie-Nguyen.jpeg',
-      robloxImage: 'rbxpfp-Julie Nguyen.webp'
+      name: 'Hugo Flanagan', 
+      position: 'Art Staff', 
+      irlImage: 'rbxpfp-Default.png',
+      robloxImage: 'rbxpfp-Default.png'
     },
   ];
 
   const finance: TeamMember[] = [
-    {
-      name: 'Nicole Fong',
-      position: 'Finance Officer',
-      irlImage: 'Nicole-Fong.png',
-      robloxImage: 'rbxpfp-Nicole Fong.jpeg',
-      zoom: 1.4, // zoom in
-      objectPosition: 'top'
+    { 
+      name: 'Jesus Michel', 
+      position: 'Finance Staff', 
+      irlImage: 'rbxpfp-Default.png',
+      robloxImage: 'rbxpfp-Default.png'
     },
     { 
-      name: 'Yeheng Mai', 
-      position: 'Finance Officer', 
-      irlImage: 'Yeheng-Mai.png',
-      robloxImage: 'rbxpfp-Yeheng Mai.png'
+      name: 'Jai Benedito', 
+      position: 'Finance Staff', 
+      irlImage: 'rbxpfp-Default.png',
+      robloxImage: 'rbxpfp-Default.png'
     },
     { 
-      name: 'Alice Park', 
-      position: 'Finance Officer', 
-      irlImage: 'Alice-Park.jpg',
-      robloxImage: 'rbxpfp-Alice Park.webp'
+      name: 'Kathy Charry', 
+      position: 'Fundraising Manager', 
+      irlImage: 'rbxpfp-Default.png',
+      robloxImage: 'rbxpfp-Default.png'
     },
+  ];
+
+  const outreach: TeamMember[] = [
     { 
-      name: 'Kaylin Bayek', 
-      position: 'Finance Officer', 
-      irlImage: 'Kaylin-Bayek.jpg',
-      robloxImage: 'rbxpfp-Kaylin Bayek.png'
+      name: 'Samantha St. Clair', 
+      position: 'Outreach & Collabs', 
+      irlImage: 'Samantha-St-Clair.JPG',
+      robloxImage: 'rbxpfp-Samantha St Clair.webp'
     },
   ];
 
@@ -193,9 +265,12 @@ export default function Home() {
   // Create a flat array of all team members with their section indices
   const allMembers = [
     ...execs.map((member, index) => ({ ...member, globalIndex: index })),
-    ...events.map((member, index) => ({ ...member, globalIndex: index + execs.length })),
-    ...marketing.map((member, index) => ({ ...member, globalIndex: index + execs.length + events.length })),
-    ...finance.map((member, index) => ({ ...member, globalIndex: index + execs.length + events.length + marketing.length })),
+    ...dev.map((member, index) => ({ ...member, globalIndex: index + execs.length })),
+    ...events.map((member, index) => ({ ...member, globalIndex: index + execs.length + dev.length })),
+    ...marketing.map((member, index) => ({ ...member, globalIndex: index + execs.length + dev.length + events.length })),
+    ...art.map((member, index) => ({ ...member, globalIndex: index + execs.length + dev.length + events.length + marketing.length})),
+    ...finance.map((member, index) => ({ ...member, globalIndex: index + execs.length + dev.length + events.length + marketing.length + art.length})),
+    ...outreach.map((member, index) => ({ ...member, globalIndex: index + execs.length + dev.length + events.length + marketing.length + art.length + finance.length})),
   ];
 
   const triggerRandomFlips = () => {
@@ -250,10 +325,39 @@ export default function Home() {
 
         <div>
           <TeamSection title="Execs" members={execs} sectionOffset={0} randomlyFlippedCards={randomlyFlippedCards} />
-          <TeamSection title="Events" members={events} sectionOffset={execs.length} randomlyFlippedCards={randomlyFlippedCards} />
-          <TeamSection title="Marketing" members={marketing} sectionOffset={execs.length + events.length} randomlyFlippedCards={randomlyFlippedCards} />
-          <TeamSection title="Finance" members={finance} sectionOffset={execs.length + events.length + marketing.length} randomlyFlippedCards={randomlyFlippedCards} />
+          <TeamSection title="Dev" members={dev} sectionOffset={execs.length} randomlyFlippedCards={randomlyFlippedCards} />
+          <TeamSection title="Events" members={events} sectionOffset={execs.length + dev.length} randomlyFlippedCards={randomlyFlippedCards} />
+          <TeamSection title="Marketing" members={marketing} sectionOffset={execs.length + dev.length + events.length} randomlyFlippedCards={randomlyFlippedCards} />
+          <TeamSection title="Art" members={art} sectionOffset={execs.length + dev.length + events.length + marketing.length} randomlyFlippedCards={randomlyFlippedCards} />
+          <TeamSection title="Finance" members={finance} sectionOffset={execs.length + dev.length + events.length + marketing.length + art.length} randomlyFlippedCards={randomlyFlippedCards} />
+          <TeamSection title="Outreach" members={outreach} sectionOffset={execs.length + dev.length + events.length + marketing.length + art.length + finance.length} randomlyFlippedCards={randomlyFlippedCards} />
         </div>
+
+        {/* Archive of Other Years */}
+        <section className="mt-16 pt-8 border-t border-gray-800">
+          <h2 className="text-white text-2xl font-bold mb-4 text-left">Other Years</h2>
+          <div className="flex flex-wrap gap-4">
+            <Link 
+              href="/team/2025-2026-officers"
+              className="inline-flex items-center gap-2 px-6 py-3 bg-[#00b2ff]/10 hover:bg-[#00b2ff]/20 text-[#00b2ff] hover:text-[#0099dd] font-medium rounded-lg border border-[#00b2ff]/20 hover:border-[#00b2ff]/40 transition-all duration-300 group"
+            >
+              <span>2025-2026 Officers</span>
+              <svg 
+                className="w-4 h-4 transition-transform duration-300 group-hover:translate-x-1" 
+                fill="none" 
+                stroke="currentColor" 
+                viewBox="0 0 24 24"
+              >
+                <path 
+                  strokeLinecap="round" 
+                  strokeLinejoin="round" 
+                  strokeWidth={2} 
+                  d="M9 5l7 7-7 7" 
+                />
+              </svg>
+            </Link>
+          </div>
+        </section>
       </main>
 
       <Footer />
