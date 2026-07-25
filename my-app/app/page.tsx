@@ -50,7 +50,7 @@ export default function Home() {
               </div>
               <Link 
                 href="/events" 
-                className="flex-shrink-0 px-8 py-4 bg-[#00b2ff] hover:bg-[#0099dd] text-white font-semibold rounded-full transition-all duration-300 hover:scale-105 shadow-lg hover:shadow-[#00b2ff]/30 text-lg"
+                className="flex-shrink-0 px-8 py-4 bg-[#00b2ff] text-white font-semibold rounded-full shadow-lg text-lg"
               >
                 Join Our Next Event →
               </Link>
@@ -60,19 +60,19 @@ export default function Home() {
 
         {/* Stats/Highlights Section */}
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8 mb-24">
-          <div className="bg-gradient-to-br from-[#1a1a1a] to-[#252525] rounded-2xl p-10 border border-gray-800 text-center hover:border-[#00b2ff]/30 transition-all duration-300">
+          <div className="bg-gradient-to-br from-[#1a1a1a] to-[#252525] rounded-2xl p-10 border border-gray-800 text-center">
             <Counter end={400} suffix="+" duration={2500} />
             <div className="text-gray-400 text-base">Robloxian Members</div>
           </div>
-          <div className="bg-gradient-to-br from-[#1a1a1a] to-[#252525] rounded-2xl p-10 border border-gray-800 text-center hover:border-[#00b2ff]/30 transition-all duration-300">
+          <div className="bg-gradient-to-br from-[#1a1a1a] to-[#252525] rounded-2xl p-10 border border-gray-800 text-center">
             <Counter end={25} suffix="+" duration={2500} />
             <div className="text-gray-400 text-base">Events Hosted</div>
           </div>
-          <div className="bg-gradient-to-br from-[#1a1a1a] to-[#252525] rounded-2xl p-10 border border-gray-800 text-center hover:border-[#00b2ff]/30 transition-all duration-300">
+          <div className="bg-gradient-to-br from-[#1a1a1a] to-[#252525] rounded-2xl p-10 border border-gray-800 text-center">
             <Counter end={10} suffix="+" duration={2500} />
             <div className="text-gray-400 text-base">Games Created</div>
           </div>
-          <div className="bg-gradient-to-br from-[#1a1a1a] to-[#252525] rounded-2xl p-10 border border-gray-800 text-center hover:border-[#00b2ff]/30 transition-all duration-300">
+          <div className="bg-gradient-to-br from-[#1a1a1a] to-[#252525] rounded-2xl p-10 border border-gray-800 text-center">
             <Counter end={30000} suffix="+" duration={2500} />
             <div className="text-gray-400 text-base">Robux Given Out</div>
           </div>
@@ -108,7 +108,7 @@ export default function Home() {
           </div>
         </div>
 
-        {/* Game Showcase Section - Updated with highlight hover effect */}
+        {/* Game Showcase Section */}
         <div className="mb-24">
           <div className="flex items-center gap-4 mb-6">
             <h2 className="text-3xl font-bold text-white">Student Games</h2>
@@ -243,7 +243,7 @@ export default function Home() {
           
           <Link 
             href="/events" 
-            className="inline-block px-8 py-4 bg-[#00b2ff] hover:bg-[#0099dd] text-white font-semibold rounded-full transition-all duration-300 hover:scale-105 shadow-lg hover:shadow-[#00b2ff]/30 text-lg"
+            className="inline-block px-8 py-4 bg-[#00b2ff] text-white font-semibold rounded-full shadow-lg text-lg"
           >
             Join Our Next Event →
           </Link>
