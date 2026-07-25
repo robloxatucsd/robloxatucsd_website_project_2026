@@ -18,10 +18,10 @@ const Carousel: React.FC<CarouselProps> = ({ items, emptyMessage }) => {
   const scrollRef = useRef<HTMLDivElement>(null);
   const [isClient, setIsClient] = useState(false);
   const [cardWidth, setCardWidth] = useState(280);
+  const [hoveredIndex, setHoveredIndex] = useState<number | null>(null);
 
   useEffect(() => {
     setIsClient(true);
-    // Calculate card width including gap
     const updateCardWidth = () => {
       if (scrollRef.current && scrollRef.current.children.length > 0) {
         const firstChild = scrollRef.current.children[0] as HTMLElement;
@@ -39,7 +39,6 @@ const Carousel: React.FC<CarouselProps> = ({ items, emptyMessage }) => {
 
   const scroll = (direction: 'left' | 'right') => {
     if (scrollRef.current) {
-      // Scroll by 3 cards at a time (visible cards)
       const scrollAmount = cardWidth * 3;
       scrollRef.current.scrollBy({
         left: direction === 'left' ? -scrollAmount : scrollAmount,
@@ -48,51 +47,31 @@ const Carousel: React.FC<CarouselProps> = ({ items, emptyMessage }) => {
     }
   };
 
-  const handleCardClick = (title: string, instagramLink?: string | null) => {
+  const handleCardClick = (instagramLink?: string | null) => {
     if (instagramLink) {
       window.open(instagramLink, '_blank', 'noopener,noreferrer');
-    } else {
-      console.log(`Navigating to: ${title}`);
-      alert(`Event Details: ${title}\n(Navigation logic pending)`);
     }
   };
 
-  // Clean text to prevent hydration issues
+  // Clean text
   const cleanText = (text: string) => {
     if (!text) return '';
-    // Remove extra newlines and spaces
     let cleaned = text.replace(/\s+/g, ' ').trim();
-    // Remove any special characters that might cause issues
-    cleaned = cleaned.replace(/[\u{0080}-\u{FFFF}]/gu, (char) => {
-      // Keep common emojis, remove problematic ones
-      return char;
-    });
     return cleaned;
   };
 
-  // Truncate text to a certain length
   const truncateText = (text: string, maxLength: number = 80) => {
     const cleaned = cleanText(text);
     if (cleaned.length <= maxLength) return cleaned;
     return cleaned.slice(0, maxLength) + '...';
   };
 
-  // If there are no items, show empty state
+  // Empty state
   if (!items || items.length === 0) {
     return (
       <div className="text-center py-16 bg-gray-800/30 rounded-xl border border-gray-700 border-dashed">
-        <svg 
-          className="w-16 h-16 mx-auto text-gray-600 mb-4" 
-          fill="none" 
-          stroke="currentColor" 
-          viewBox="0 0 24 24"
-        >
-          <path 
-            strokeLinecap="round" 
-            strokeLinejoin="round" 
-            strokeWidth={1.5} 
-            d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" 
-          />
+        <svg className="w-16 h-16 mx-auto text-gray-600 mb-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
         </svg>
         <p className="text-gray-400 text-lg">
           {emptyMessage || "No upcoming events just yet, check back again soon!"}
@@ -102,7 +81,6 @@ const Carousel: React.FC<CarouselProps> = ({ items, emptyMessage }) => {
     );
   }
 
-  // If not client-side yet, render a simple version
   if (!isClient) {
     return (
       <div className="relative group">
@@ -122,7 +100,7 @@ const Carousel: React.FC<CarouselProps> = ({ items, emptyMessage }) => {
   }
 
   return (
-    <div className="relative group">
+    <div className="relative">
       {/* Left Arrow */}
       <button
         onClick={() => scroll('left')}
@@ -158,60 +136,62 @@ const Carousel: React.FC<CarouselProps> = ({ items, emptyMessage }) => {
           .no-scrollbar::-webkit-scrollbar { display: none; }
         `}} />
 
-        {items.map((event, index) => (
-          <div
-            key={index}
-            className="min-w-[280px] max-w-[280px] snap-start flex flex-col bg-gray-800 rounded-xl overflow-hidden border border-gray-700 hover:border-[#00b2ff] transition-all duration-300 shadow-lg"
-          >
-            {/* Image Container */}
-            <div 
-              className="relative w-full h-40 bg-gray-700 cursor-pointer overflow-hidden"
-              onClick={() => handleCardClick(event.title, event.instagramLink)}
+        {items.map((event, index) => {
+          const isHovered = hoveredIndex === index;
+          
+          return (
+            <div
+              key={index}
+              onClick={() => handleCardClick(event.instagramLink)}
+              onMouseEnter={() => setHoveredIndex(index)}
+              onMouseLeave={() => setHoveredIndex(null)}
+              className="min-w-[280px] max-w-[280px] snap-start flex flex-col bg-gray-800 rounded-xl overflow-hidden border border-gray-700 transition-all duration-300 shadow-lg cursor-pointer"
+              style={{
+                borderColor: isHovered ? '#00b2ff' : 'rgb(55, 65, 81)',
+              }}
             >
-              <img
-                src={event.image}
-                alt={event.title}
-                className="w-full h-full object-cover transition-transform duration-300 hover:scale-105"
-              />
-            </div>
+              {/* Image Container */}
+              <div className="relative w-full h-40 bg-gray-700 overflow-hidden">
+                <img
+                  src={event.image}
+                  alt={event.title}
+                  className="w-full h-full object-cover"
+                />
+              </div>
 
-            {/* Text Content */}
-            <div className="p-4 flex flex-col flex-1">
-              <h3 className="text-white font-bold text-base truncate tracking-tight">
-                {event.title}
-              </h3>
-              <p className="text-gray-400 text-sm mt-1 line-clamp-2 flex-1">
-                {truncateText(event.subtitle, 80)}
-              </p>
-              
-              {/* Instagram Link */}
-              {event.instagramLink && (
-                <a
-                  href={event.instagramLink}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  onClick={(e) => e.stopPropagation()}
-                  className="inline-flex items-center mt-3 text-[#00b2ff] hover:text-[#0099dd] transition-colors text-sm font-medium w-fit"
+              {/* Text Content */}
+              <div className="p-4 flex flex-col flex-1">
+                <h3 
+                  className="text-white font-bold text-base truncate tracking-tight transition-colors duration-300"
+                  style={{
+                    color: isHovered ? '#00b2ff' : 'white',
+                  }}
                 >
-                  View Event Details
-                  <svg 
-                    className="w-4 h-4 ml-1" 
-                    fill="none" 
-                    stroke="currentColor" 
-                    viewBox="0 0 24 24"
+                  {event.title}
+                </h3>
+                <p className="text-gray-400 text-sm mt-1 line-clamp-2 flex-1">
+                  {truncateText(event.subtitle, 80)}
+                </p>
+                
+                {/* Instagram Link */}
+                {event.instagramLink && (
+                  <a
+                    href={event.instagramLink}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    onClick={(e) => e.stopPropagation()}
+                    className="inline-flex items-center mt-3 text-[#00b2ff] hover:text-[#0099dd] transition-colors text-sm font-medium w-fit"
                   >
-                    <path 
-                      strokeLinecap="round" 
-                      strokeLinejoin="round" 
-                      strokeWidth={2} 
-                      d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" 
-                    />
-                  </svg>
-                </a>
-              )}
+                    View Event Details
+                    <svg className="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+                    </svg>
+                  </a>
+                )}
+              </div>
             </div>
-          </div>
-        ))}
+          );
+        })}
       </div>
     </div>
   );
