@@ -12,12 +12,17 @@ function NavBar() {
                         alt="Club Logo" 
                         width={64}
                         height={64}
-                        className="object-contain transition-transform duration-300 group-hover:scale-105"
+                        className="object-contain"
                         priority
                     />
-                    <span className="text-white font-bold text-xl transition-colors duration-300 group-hover:text-[#A3A3A3]">
-                        Roblox + <span className="text-[#00b2ff] transition-colors duration-300 group-hover:text-[#0099dd]">RBXDev</span>
-                    </span>
+                    <div className="flex flex-col">
+                        <span className="text-white font-bold text-xl transition-colors duration-300 group-hover:text-[#A3A3A3]">
+                            Roblox + <span className="text-[#00b2ff] transition-colors duration-300 group-hover:text-[#0099dd]">RBXDev</span>
+                        </span>
+                        <span className="text-[#00b2ff] text-sm font-light tracking-wide transition-colors duration-300 group-hover:text-[#0099dd]">
+                            at UC San Diego
+                        </span>
+                    </div>
                 </Link>
                 
                 {/* Navigation Links */}

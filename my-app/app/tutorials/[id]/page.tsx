@@ -136,7 +136,10 @@ export default function TutorialDetail() {
 
     if (!tutorial) {
         return (
-            <div className="min-h-screen bg-gradient-to-b from-[#0a0a0a] to-[#1a1a1a]">
+            <div 
+                className="min-h-screen bg-cover bg-center bg-no-repeat"
+                style={{ backgroundImage: `url(/generalMedias/background.png)` }}
+            >
                 <NavBar />
                 <main className="container mx-auto px-6 py-12 max-w-7xl">
                     <div className="text-center py-20">
@@ -152,7 +155,10 @@ export default function TutorialDetail() {
     }
 
     return (
-        <div className="min-h-screen bg-gradient-to-b from-[#0a0a0a] to-[#1a1a1a]">
+        <div 
+            className="min-h-screen bg-cover bg-center bg-no-repeat text-white"
+            style={{ backgroundImage: `url(/generalMedias/background.png)` }}
+        >
             <NavBar />
       
             <main className="container mx-auto px-6 py-12 max-w-7xl">
