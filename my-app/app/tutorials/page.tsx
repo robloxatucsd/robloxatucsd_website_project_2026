@@ -5,6 +5,7 @@ import Image from "next/image";
 import Link from 'next/link';
 import NavBar from '../modules/navbar';
 import Footer from '../components/Footer';
+import ScrollToTop from '../components/ScrollToTop';
 
 // tutorial data structure
 interface Tutorial {
@@ -349,6 +350,8 @@ export default function Home() {
                     />
                 </div>
             </main>
+
+            <ScrollToTop threshold={300} />
 
             <Footer />
         </div>

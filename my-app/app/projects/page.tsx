@@ -3,6 +3,7 @@ import Link from 'next/link';
 
 import NavBar from '../modules/navbar';
 import Footer from '../components/Footer';
+import ScrollToTop from '../components/ScrollToTop';
 
 // game card:
 interface GameCardProps {
@@ -170,6 +171,8 @@ export default function Home() {
                 {/* Games Section */}
                 <ProjectRow gameList={allGames} />
             </main>
+
+            <ScrollToTop threshold={300} />
 
             <Footer />
         </div>

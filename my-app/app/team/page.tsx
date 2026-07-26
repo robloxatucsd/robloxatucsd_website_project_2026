@@ -6,6 +6,7 @@ import NavBar from '../modules/navbar';
 import Footer from '../components/Footer';
 import FlipCard from '../components/FlipCard';
 import { useState, useEffect } from 'react';
+import ScrollToTop from '../components/ScrollToTop';
 
 interface TeamMember {
   name: string;
@@ -362,6 +363,8 @@ export default function Home() {
           </div>
         </section>
       </main>
+
+      <ScrollToTop threshold={300} />
 
       <Footer />
     </div>

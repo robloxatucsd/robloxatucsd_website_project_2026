@@ -10,6 +10,7 @@ import NavBar from './modules/navbar';
 import Footer from './components/Footer';
 import Counter from './components/Counter';
 import GroupPhotoWithVideo from './components/GroupPhotoWithVideo';
+import ScrollToTop from './components/ScrollToTop';
 
 const fadeUp = {
   hidden: { opacity: 0, y: 30 },
@@ -373,16 +374,7 @@ export default function Home() {
         </motion.div>
       </section>
 
-      {/* Scroll to Top Button */}
-      {showScrollTop && (
-        <button
-          onClick={scrollToTop}
-          className="fixed bottom-8 right-8 z-50 p-3 bg-[#00b2ff] hover:bg-[#0099dd] text-white rounded-full shadow-lg transition-all duration-300 hover:scale-110"
-          aria-label="Scroll to top"
-        >
-          <ArrowUp size={24} />
-        </button>
-      )}
+      <ScrollToTop threshold={300} />
 
       <Footer />
     </div>

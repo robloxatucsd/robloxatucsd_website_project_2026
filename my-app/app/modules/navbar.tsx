@@ -3,7 +3,7 @@ import Link from 'next/link';
 
 function NavBar() {
     return (
-        <nav className="bg-[#1a1a1a] border-b border-gray-800">
+        <nav className="sticky top-0 z-50 bg-[#1a1a1a] border-b border-gray-800">
             <div className="container mx-auto px-6 py-4 max-w-7xl flex items-center justify-between">
                 {/* Logo Image */}
                 <Link href="/" className="flex items-center gap-3 group">

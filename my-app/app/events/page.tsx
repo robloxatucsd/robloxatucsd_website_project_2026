@@ -2,6 +2,7 @@ import NavBar from '../modules/navbar';
 import Footer from '../components/Footer';
 import Carousel from '../components/Carousel';
 import { client, urlFor } from '../../sanity/lib/sanity';
+import ScrollToTop from '../components/ScrollToTop';
 
 interface Event {
   _id: string;
@@ -122,6 +123,8 @@ export default async function EventsPage() {
           <Carousel items={recentEvents} />
         </section>
       </main>
+
+      <ScrollToTop threshold={300} />
 
       <Footer />
     </div>
