@@ -5,6 +5,7 @@ import Image from "next/image";
 import Link from 'next/link';
 import NavBar from '../modules/navbar';
 import Footer from '../components/Footer';
+import ScrollToTop from '../components/ScrollToTop';
 
 // tutorial data structure
 interface Tutorial {
@@ -124,7 +125,7 @@ const tutorials: Tutorial[] = [
 interface TutorialCarouselProps {
     tutorials: Tutorial[];
     title: string;
-    sectionRef?: React.RefObject<HTMLElement | null>; // Updated type to accept null
+    sectionRef?: React.RefObject<HTMLElement | null>;
 }
 
 function TutorialCarousel({ tutorials, title, sectionRef }: TutorialCarouselProps) {
@@ -288,7 +289,10 @@ export default function Home() {
     };
 
     return (
-        <div className="min-h-screen bg-gradient-to-b from-[#0a0a0a] to-[#1a1a1a]">
+        <div 
+            className="min-h-screen bg-cover bg-center bg-no-repeat text-white"
+            style={{ backgroundImage: `url(/generalMedias/background.png)` }}
+        >
             <NavBar />
       
             <main className="container mx-auto px-6 py-12 max-w-7xl">
@@ -346,6 +350,8 @@ export default function Home() {
                     />
                 </div>
             </main>
+
+            <ScrollToTop threshold={300} />
 
             <Footer />
         </div>

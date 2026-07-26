@@ -6,6 +6,7 @@ import NavBar from '../modules/navbar';
 import Footer from '../components/Footer';
 import FlipCard from '../components/FlipCard';
 import { useState, useEffect } from 'react';
+import ScrollToTop from '../components/ScrollToTop';
 
 interface TeamMember {
   name: string;
@@ -312,7 +313,10 @@ export default function Home() {
   }, []);
 
   return (
-    <div className="min-h-screen bg-gradient-to-b from-[#0a0a0a] to-[#1a1a1a] text-white">
+    <div 
+      className="min-h-screen bg-cover bg-center bg-no-repeat text-white"
+      style={{ backgroundImage: `url(/generalMedias/background.png)` }}
+    >
       <NavBar />
       
       <main className="container mx-auto px-6 py-12 max-w-7xl">
@@ -359,6 +363,8 @@ export default function Home() {
           </div>
         </section>
       </main>
+
+      <ScrollToTop threshold={300} />
 
       <Footer />
     </div>

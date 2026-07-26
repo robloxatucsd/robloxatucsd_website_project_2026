@@ -2,6 +2,7 @@ import NavBar from '../modules/navbar';
 import Footer from '../components/Footer';
 import Carousel from '../components/Carousel';
 import { client, urlFor } from '../../sanity/lib/sanity';
+import ScrollToTop from '../components/ScrollToTop';
 
 interface Event {
   _id: string;
@@ -97,7 +98,10 @@ export default async function EventsPage() {
     });
 
   return (
-    <div className="min-h-screen bg-gradient-to-b from-[#0a0a0a] to-[#1a1a1a] text-white">
+    <div 
+      className="min-h-screen bg-cover bg-center bg-no-repeat text-white"
+      style={{ backgroundImage: `url(/generalMedias/background.png)` }}
+    >
       <NavBar />
 
       <main className="container mx-auto px-16 py-12 max-w-[1400px]">
@@ -119,6 +123,8 @@ export default async function EventsPage() {
           <Carousel items={recentEvents} />
         </section>
       </main>
+
+      <ScrollToTop threshold={300} />
 
       <Footer />
     </div>

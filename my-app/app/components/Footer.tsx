@@ -12,7 +12,7 @@ const Footer: React.FC = () => {
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 items-start">
           {/* Left Section - Logo and Tagline */}
           <div className="flex flex-col items-center md:items-start">
-            <div className="flex items-center gap-3 mb-2">
+            <div className="flex items-center gap-3 mb-1">
               <div className="relative w-10 h-10">
                 <Image
                   src="/generalMedias/Club Logo No Bg.png"
@@ -21,12 +21,17 @@ const Footer: React.FC = () => {
                   className="object-contain"
                 />
               </div>
-              <span className="text-white font-bold text-lg">
-                Roblox + <span className="text-[#00b2ff]">RBXDev</span>
-              </span>
+              <div className="flex flex-col">
+                <span className="text-white font-bold text-lg">
+                  Roblox + <span className="text-[#00b2ff]">RBXDev</span>
+                </span>
+                <span className="text-[#00b2ff] text-xs font-light tracking-wide">
+                  at UC San Diego
+                </span>
+              </div>
             </div>
             <p className="text-gray-400 text-sm text-center md:text-left">
-              Building community through Roblox
+              Building community through Roblox at UCSD.
             </p>
           </div>
 
@@ -110,7 +115,7 @@ const Footer: React.FC = () => {
         {/* Bottom Bar - Copyright */}
         <div className="mt-8 pt-6 border-t border-gray-800 text-center">
           <p className="text-gray-500 text-sm">
-            Roblox + <span className="text-[#00b2ff]">RBXDev</span> @ UC San Diego &bull; {new Date().getFullYear()}
+            © {new Date().getFullYear()} Roblox + <span className="text-[#00b2ff]">RBXDev</span> at UC San Diego &bull; All rights reserved.
           </p>
         </div>
       </div>
