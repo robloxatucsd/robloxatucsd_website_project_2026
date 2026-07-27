@@ -2,7 +2,6 @@
 
 import Image from "next/image";
 import Link from 'next/link';
-import { motion, Variants } from "framer-motion";
 import { ArrowRight, ChevronDown, Code2, MessageCircle, Users } from "lucide-react";
 
 import NavBar from './modules/navbar';
@@ -16,7 +15,7 @@ export default function Home() {
     <div className="min-h-screen bg-[#0a0a0a] text-white">
       <NavBar />
 
-      {/* Hero Section - Clean, focused, high contrast */}
+      {/* Hero Section */}
       <section className="relative min-h-[90vh] flex flex-col items-center justify-center overflow-hidden">
         <div
           className="absolute inset-0 bg-cover bg-no-repeat bg-[center_20%]"
@@ -25,11 +24,6 @@ export default function Home() {
         <div className="absolute inset-0 bg-black/50" />
 
         <div className="relative z-10 text-center px-6 max-w-4xl mx-auto">
-          <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-[#00b2ff]/20 text-[#00b2ff] text-xs font-medium tracking-wider mb-6">
-            <span className="w-1.5 h-1.5 rounded-full bg-[#00b2ff]" />
-            UC San Diego's Roblox Community
-          </div>
-
           <h1
             className="font-bold leading-[1.05] tracking-tight"
             style={{
@@ -45,8 +39,8 @@ export default function Home() {
             at UC San Diego
           </h1>
 
-          <p className="text-base md:text-lg text-[#A3A3A3] max-w-xl mx-auto mt-6 mb-10 leading-relaxed">
-            We are both a Social and Technical club on campus looking to foster a community with UCSD students who are interested in Roblox and Roblox Development!
+          <p className="text-base md:text-lg text-[#A3A3A3] max-w-2xl mx-auto mt-6 mb-10 leading-relaxed">
+            We are both a Social and Technical Club on Campus looking to Foster a community with UCSD Students who are interested in Roblox and Roblox Development. Our Social events consist of Game Nights, Tournaments, and Spontaneous Hangouts. Our Technical Events consist of Workshops, Game Jams, and Roblox Dev Class.
           </p>
 
           <div className="flex flex-wrap gap-4 justify-center">
@@ -54,13 +48,13 @@ export default function Home() {
               href="https://discord.com/invite/SwGUGv3Rgj"
               target="_blank"
               rel="noopener noreferrer"
-              className="px-6 py-3 rounded-full bg-[#00b2ff] text-white font-medium text-sm hover:bg-[#0099dd] transition-colors duration-200"
+              className="px-6 py-3 rounded-full bg-[#00b2ff] text-white font-semibold text-sm hover:bg-[#0099dd] transition-colors duration-200"
             >
               Join Discord
             </a>
             <Link
               href="/events"
-              className="px-6 py-3 rounded-full border border-[#2a2a2a] text-[#A3A3A3] font-medium text-sm hover:border-[#00b2ff]/30 hover:text-white transition-colors duration-200"
+              className="px-6 py-3 rounded-full border border-[#2a2a2a] text-[#A3A3A3] font-semibold text-sm hover:border-[#00b2ff]/30 hover:text-white transition-colors duration-200"
             >
               Explore Events
             </Link>
@@ -73,7 +67,7 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Stats - Clean metrics */}
+      {/* Stats */}
       <section className="border-y border-[#1a1a1a] bg-[#0d0d0d]">
         <div className="max-w-7xl mx-auto px-6 py-8 grid grid-cols-2 md:grid-cols-4 divide-x divide-[#1a1a1a]">
           <div className="flex flex-col items-center">
@@ -103,49 +97,10 @@ export default function Home() {
         </div>
       </section>
 
-      {/* About - Two pillars, balanced */}
-      <section className="max-w-7xl mx-auto px-6 py-24">
-        <div className="grid md:grid-cols-2 gap-6">
-          {[
-            {
-              icon: <Users size={20} strokeWidth={1.5} />,
-              label: "Social",
-              color: "#f97316",
-              title: "Game Nights, Tournaments, & Socials",
-              desc: "From trying to survive in Natural Disaster Survival to playing Roblox at 1am on the Discord Server, we host various club events, hangouts, and spontaneous game nights! Be sure to stay up to date with our events by following our socials!",
-            },
-            {
-              icon: <Code2 size={20} strokeWidth={1.5} />,
-              label: "Technical",
-              color: "#00b2ff",
-              title: "Dev Workshops & Game Jams",
-              desc: "Beginner Roblox Studio tutorials, advanced scripting workshops, structured game jams, and our very own RBX 101 development class! Be sure to check out our tutorials, workshops, and our members' Roblox games!",
-            },
-          ].map((p) => (
-            <div
-              key={p.label}
-              className="rounded-xl border border-[#1a1a1a] bg-[#0d0d0d] p-8 hover:border-[#00b2ff]/15 transition-colors duration-300"
-            >
-              <div
-                className="inline-flex items-center gap-2 px-3 py-1 rounded-full text-[10px] font-medium tracking-[0.1em] mb-6"
-                style={{ color: p.color, background: `${p.color}10`, border: `1px solid ${p.color}15` }}
-              >
-                {p.icon}
-                {p.label}
-              </div>
-              <h3 className="text-xl font-bold text-white mb-2 tracking-tight">
-                {p.title}
-              </h3>
-              <p className="text-[#A3A3A3] leading-relaxed text-sm">{p.desc}</p>
-            </div>
-          ))}
-        </div>
-      </section>
-
       {/* Games Showcase */}
-      <section className="max-w-7xl mx-auto px-6 pb-16">
+      <section className="max-w-7xl mx-auto px-6 pt-24 pb-16">
         <div>
-          <div className="flex items-end justify-between mb-8">
+          <div className="flex items-end justify-between mb-4">
             <div>
               <p className="text-[10px] tracking-[0.2em] text-[#00b2ff] font-medium uppercase">Student Games</p>
               <div className="flex items-center gap-4">
@@ -252,7 +207,7 @@ export default function Home() {
               src="/homeMedias/groupPhoto2.png"
               videoSrc="/homeMedias/video2.mp4"
               alt="Dress to Impress UCSD tournament"
-              caption="Dress to Impress Tournament"
+              caption="Dress to Impress Tournament! Theme: UCSD Colleges"
               hoverCaption="Spontaneous Game Night"
               objectPosition="50% 40%"
               scale={1.1}
