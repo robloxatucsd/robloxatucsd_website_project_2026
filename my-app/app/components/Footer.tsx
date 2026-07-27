@@ -31,7 +31,7 @@ const Footer: React.FC = () => {
               </div>
             </div>
             <p className="text-gray-400 text-sm text-center md:text-left">
-              Building community through Roblox at UCSD.
+              A community for Roblox developers and players at UCSD!
             </p>
           </div>
 
