@@ -25,7 +25,7 @@ const Footer: React.FC = () => {
                 <span className="text-white font-bold text-lg">
                   Roblox + <span className="text-[#00b2ff]">RBXDev</span>
                 </span>
-                <span className="text-[#00b2ff] text-xs font-light tracking-wide">
+                <span className="text-white text-xs font-light tracking-wide">
                   at UC San Diego
                 </span>
               </div>

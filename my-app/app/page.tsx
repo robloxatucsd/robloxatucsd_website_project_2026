@@ -28,13 +28,9 @@ export default function Home() {
             className="font-bold leading-[1.05] tracking-tight"
             style={{
               fontSize: "clamp(2.5rem, 8vw, 5.5rem)",
-              background: "linear-gradient(135deg, #ffffff 40%, #00b2ff 80%)",
-              WebkitBackgroundClip: "text",
-              WebkitTextFillColor: "transparent",
-              backgroundClip: "text",
             }}
           >
-            Roblox + RBXDev
+            Roblox + <span className="text-[#00b2ff]">RBXDev</span>
             <br />
             at UC San Diego
           </h1>

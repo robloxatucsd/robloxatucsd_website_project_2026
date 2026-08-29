@@ -33,7 +33,7 @@ function NavBar() {
                         <span className="text-white font-bold text-lg sm:text-2xl transition-colors duration-300 group-hover:text-[#A3A3A3]">
                             Roblox + <span className="text-[#00b2ff] transition-colors duration-300 group-hover:text-[#0099dd]">RBXDev</span>
                         </span>
-                        <span className="text-[#00b2ff] text-xs sm:text-base font-light tracking-wide transition-colors duration-300 group-hover:text-[#0099dd]">
+                        <span className="text-white text-xs sm:text-base font-light tracking-wide transition-colors duration-300 group-hover:text-[#0099dd]">
                             at UC San Diego
                         </span>
                     </div>
