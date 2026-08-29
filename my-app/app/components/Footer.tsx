@@ -115,7 +115,7 @@ const Footer: React.FC = () => {
         {/* Bottom Bar - Copyright */}
         <div className="mt-8 pt-6 border-t border-gray-800 text-center">
           <p className="text-gray-500 text-sm">
-            © {new Date().getFullYear()} Roblox + <span className="text-[#00b2ff]">RBXDev</span> at UC San Diego &bull; All rights reserved.
+            © {new Date().getFullYear()} Roblox + RBXDev at UC San Diego &bull; All rights reserved.
           </p>
         </div>
       </div>
