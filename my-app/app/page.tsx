@@ -44,7 +44,7 @@ export default function Home() {
               href="https://discord.com/invite/SwGUGv3Rgj"
               target="_blank"
               rel="noopener noreferrer"
-              className="px-6 py-3 rounded-full bg-[#00b2ff] text-white font-semibold text-sm hover:bg-[#0099dd] transition-colors duration-200"
+              className="px-6 py-3 rounded-full bg-[#0066cc] text-white font-semibold text-sm hover:bg-[#0055aa] transition-colors duration-200"
             >
               Join Discord
             </a>
@@ -57,7 +57,7 @@ export default function Home() {
           </div>
         </div>
 
-        <div className="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-1 text-[#5a5a5a]">
+        <div className="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-1 text-[#A3A3A3]">
           <span className="text-[10px] tracking-[0.2em] font-medium">Scroll</span>
           <ChevronDown size={16} strokeWidth={1.5} className="animate-bounce" />
         </div>
@@ -68,25 +68,25 @@ export default function Home() {
         <div className="max-w-7xl mx-auto px-6 py-8 grid grid-cols-2 md:grid-cols-4 divide-x divide-[#1a1a1a]">
           <div className="flex flex-col items-center">
             <Counter end={400} suffix="+" duration={2500} />
-            <span className="text-[10px] tracking-[0.15em] text-[#5a5a5a] uppercase font-medium mt-1">
+            <span className="text-[10px] tracking-[0.15em] text-[#A3A3A3] uppercase font-medium mt-1">
               Members
             </span>
           </div>
           <div className="flex flex-col items-center">
             <Counter end={25} suffix="+" duration={2500} />
-            <span className="text-[10px] tracking-[0.15em] text-[#5a5a5a] uppercase font-medium mt-1">
+            <span className="text-[10px] tracking-[0.15em] text-[#A3A3A3] uppercase font-medium mt-1">
               Events Hosted
             </span>
           </div>
           <div className="flex flex-col items-center">
             <Counter end={10} suffix="+" duration={2500} />
-            <span className="text-[10px] tracking-[0.15em] text-[#5a5a5a] uppercase font-medium mt-1">
+            <span className="text-[10px] tracking-[0.15em] text-[#A3A3A3] uppercase font-medium mt-1">
               Games Created
             </span>
           </div>
           <div className="flex flex-col items-center">
             <Counter end={30000} suffix="+" duration={2500} />
-            <span className="text-[10px] tracking-[0.15em] text-[#5a5a5a] uppercase font-medium mt-1">
+            <span className="text-[10px] tracking-[0.15em] text-[#A3A3A3] uppercase font-medium mt-1">
               Robux Given
             </span>
           </div>
