@@ -122,7 +122,6 @@ export default function Home() {
     { 
       name: 'Wanyi Wu', 
       position: 'Social Media', 
-      irlImage: 'Wanyi-Wu.jpg',
       robloxImage: 'rbxpfp-Wanyi Wu.png'
     },
     { 

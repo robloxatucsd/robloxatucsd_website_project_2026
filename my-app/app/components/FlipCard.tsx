@@ -27,8 +27,9 @@ export default function FlipCard({
   // Card is flipped if hovered OR externally controlled
   const shouldFlip = isHovered || isFlipped;
 
-  const irlSrc = irlImage ? `/team/irlprofiles/${irlImage}` : null;
   const robloxSrc = robloxImage ? `/team/robloxprofiles/${robloxImage}` : null;
+  // Fall back to the Roblox pfp on the front when there's no IRL photo
+  const irlSrc = irlImage ? `/team/irlprofiles/${irlImage}` : robloxSrc;
 
   return (
     <div className="bg-gray-800 rounded-lg p-4 flex items-center gap-4 group/card">
